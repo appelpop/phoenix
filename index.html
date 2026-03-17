@@ -9,104 +9,210 @@
 body {
     margin: 0;
     font-family: Arial, sans-serif;
-    background: #879592;
-    color: white;
 }
 
 /* NAVBAR */
 header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #c81e2b;
+    padding: 0 40px;
+    height: 70px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 40px;
-    background: rgba(0,0,0,0.7);
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 100;
+
+    box-sizing: border-box;
+    z-index: 1000;
 }
 
-header h1 {
-    color: #f59e0b;
-    margin: 0;
+/* Zorg dat alles netjes in lijn staat */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
 }
 
 nav a {
     color: white;
-    margin-left: 20px;
     text-decoration: none;
     font-weight: bold;
 }
 
-nav a:hover {
-    color: #f59e0b;
+/* Logo/tekst links */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+}
+
+.tagline {
+    font-size: 12px;
+    color: #ffd1d1; /* licht rood/witachtig */
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    background: white;       /* kleur van de cirkel */
+    border-radius: 100%;      /* maakt het rond */
+    padding: 8px;            /* ruimte rondom logo */
+}
+
+.logo span {
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    color: black;
+    top: 30px;
+    min-width: 180px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: black;
+}
+
+.dropdown-content a:hover {
+    background: #eee;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
 /* HERO */
 .hero {
-    height: 100vh;
-    background: url('https://images.unsplash.com/photo-1508873699372-7aeab60b44c7') center/cover no-repeat;
+    height: 40vh;
+    background: url("images/gebouw.heic") center/cover no-repeat;
     display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
+    justify-content: flex-end;
+    padding: 50px;
+    color: #ec0505;
+}
+.hero {
+
+    background:
+        linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+        url("images/gebouw.heic") center/cover no-repeat;
+}
+.hero-text {
+    max-width: 1000px;
+    text-align: right;
+    margin-right: 50px;
 }
 
-.hero h2 {
-    font-size: 3em;
-    background: rgba(0,0,0,0.6);
-    padding: 20px;
-    border-radius: 10px;
+.hero h1 {
+    font-size: 60px;
 }
 
-/* SECTIONS */
-.section {
-    padding: 80px 40px;
-    max-width: 1100px;
-    margin: auto;
-}
-
-.section h2 {
-    color: #f59e0b;
-}
-
-/* CARDS */
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-}
-
-.card {
-    background: #123524;
-    padding: 20px;
-    border-radius: 12px;
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-    background: #1b4d35;
-}
-
-/* BUTTON */
+/* BUTTONS */
 .button {
     display: inline-block;
-    margin-top: 20px;
-    padding: 12px 24px;
-    background: #f59e0b;
-    color: black;
+    margin-top: 10px;
+    padding: 10px 20px;
     border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
 }
 
-/* FOOTER */
+.btn-red {
+    background: #c81e2b;
+    color: white;
+}
+
+.btn-white {
+    background: white;
+    color: black;
+}
+
+/* CONTENT */
+.section {
+    padding: 60px;
+    background: #f5f5f5;
+}
+
+.section.light {
+    background: #f5f5f5;
+    color: #333;
+}
+
+.text-block {
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    color: #333;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.card-header img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
 footer {
-    background: #020617;
-    text-align: center;
-    padding: 20px;
-    color: #94a3b8;
+    background: #1a1a1a;
+    color: white;
+    padding: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 </style>
 </head>
@@ -114,90 +220,144 @@ footer {
 <body>
 
 <header>
-    <h1>🔥 Scouting Phoenix</h1>
+    <div class="logo">
+        <img src="images/vuurvogel.png" alt="Scouting Phoenix logo">
+        <div class="logo-text">
+            <span class="title">Scouting Phoenix Tiel</span>
+            <span class="tagline">-  Vol Vuur Vooruit  -</span>
+        </div>
+
+    </div>
+
     <nav>
         <a href="#">Home</a>
-        <a href="#">Over ons</a>
-        <a href="#">Speltakken</a>
+
+        <div class="dropdown">
+            <a href="#">Wat is scouting? ▾</a>
+            <div class="dropdown-content">
+                <a href="#">Uitleg</a>
+                <a href="#">Geschiedenis</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="#">Speltakken ▾</a>
+            <div class="dropdown-content">
+                <a href="#">Bevers</a>
+                <a href="#">Welpen</a>
+                <a href="#">Scouts</a>
+                <a href="#">Explorers</a>
+                <a href="#">Roverscouts</a>
+            </div>
+        </div>
+
         <a href="#">Verhuur</a>
         <a href="#">Contact</a>
     </nav>
 </header>
 
 <section class="hero">
-    <h2>Avontuur begint hier</h2>
-</section>
-
-<section class="section">
-    <h2>Welkom bij Scouting Phoenix</h2>
-    <p>
-        Scouting Phoenix is een actieve scoutinggroep waar plezier, avontuur en samenwerken centraal staan.
-        Kinderen vanaf 5 jaar kunnen bij ons terecht voor uitdagende activiteiten in de natuur.
-    </p>
-    <a href="#" class="button">Word lid</a>
-</section>
-
-<section class="section">
-    <h2>Onze speltakken</h2>
-
-    <div class="cards">
-        <div class="card">
-            <h3>🦫 Bevers (5–7 jaar)</h3>
-            <p>Spelenderwijs ontdekken kinderen de wereld en maken ze hun eerste avonturen.</p>
-        </div>
-
-        <div class="card">
-            <h3>🐺 Welpen (7–11 jaar)</h3>
-            <p>Actieve en uitdagende programma’s met natuur, spel en samenwerking.</p>
-        </div>
-
-        <div class="card">
-            <h3>🔥 Scouts (11–15 jaar)</h3>
-            <p>Meer zelfstandigheid, techniek en echte outdoor skills.</p>
-        </div>
+    <div class="hero-text">
+        <h1>Welkom bij<br>Scouting Phoenix Tiel!</h1>
+        <a href="#" class="button btn-red">Bekijk de groepen!</a>
+        <a href="#" class="button btn-white">Word scout!</a>
     </div>
 </section>
 
-<section class="section">
-    <h2>Wat doen wij?</h2>
+<section class="section light">
+    <h2>Over ons</h2>
+
+    <div class="text-block">
+        <p>
+            Onze vereniging is dé scoutingvereniging van Tiel en omstreken.
+            Elke week beleven 150 leden en kaderleden een nieuw avontuur bij de diverse speltakken.
+        </p>
+
+        <p>
+            Scouting is er voor iedere leeftijd en ook voor kinderen met een beperking.
+            Iedereen is welkom om mee te doen.
+        </p>
+
+        <p>
+            De opkomsten vinden plaats op het scoutingterrein aan de Hennepe in Tiel.
+            De jongere speltakken draaien op zaterdag, de oudere op vrijdagavond.
+        </p>
+
+        <p>
+            Kijken bij een speltak mag vier keer gratis.
+            Neem gerust contact met ons op!
+        </p>
+    </div>
+</section>
+<section class="section light">
+    <h2>De Speltakken</h2>
 
     <div class="cards">
         <div class="card">
-            <h3>🏕️ Kampen</h3>
-            <p>Ga mee op kamp en beleef onvergetelijke avonturen.</p>
+            <div class="card-header">
+                <img src="images/bevers.png" alt="Bevers">
+                <h3>Bevers</h3>
+            </div>
+            <p><strong>5 - 7 jaar</strong></p>
+            <p>Spelenderwijs ontdekken kinderen de wereld en beleven hun eerste avonturen.</p>
         </div>
 
         <div class="card">
-            <h3>🔥 Outdoor skills</h3>
-            <p>Leer vuur maken, pionieren en navigeren.</p>
+            <div class="card-header">
+                <img src="images/welpen.png" alt="welpen">
+                <h3>welpen</h3>
+            </div>
+            <p><strong>7 - 11 jaar</strong></p>
+            <p>Actieve programma’s met natuur, spel en samenwerking.</p>
         </div>
 
         <div class="card">
-            <h3>🤝 Samenwerken</h3>
-            <p>Maak vrienden en werk samen in een hechte groep.</p>
+            <div class="card-header">
+                <img src="images/Scouts.png" alt="Scouts">
+                <h3>Scouts</h3>
+            </div>
+
+            <p><strong>11 - 15 jaar</strong></p>
+            <p>Meer uitdaging, techniek en echte outdoor skills.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <img src="images/Explorers.png" alt="Explorers">
+                <h3>Explorers</h3>
+            </div>
+
+            <p><strong>15 - 18 jaar</strong></p>
+            <p>Zelfstandigheid en eigen activiteiten organiseren.</p>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <img src="images/Roverscouts.png" alt="Roverscouts">
+                <h3>Roverscouts</h3>
+            </div>
+
+            <p><strong>18 - 21 jaar</strong></p>
+            <p>Vrijheid, avontuur en gezelligheid.</p>
         </div>
     </div>
 </section>
-
-<section class="section">
-    <h2>Verhuur</h2>
-    <p>
-        Ons gebouw is beschikbaar voor verhuur. Ideaal voor groepen, activiteiten en overnachtingen.
-    </p>
-    <a href="#" class="button">Meer info</a>
-</section>
-
-<section class="section">
-    <h2>Contact</h2>
-    <p>
-        Heb je vragen of wil je een keer komen kijken? Neem gerust contact met ons op!
-    </p>
-    <a href="#" class="button">Neem contact op</a>
-</section>
-
 <footer>
-    © 2026 Scouting Phoenix — Alle rechten voorbehouden
-</footer>
+    <div class="footer-content">
+        <div>
+            <h3>Scouting Phoenix Tiel</h3>
+            <p>- Vol Vuur Vooruit -</p>
+        </div>
 
+        <div>
+            <p>📍 Hennepe, Tiel</p>
+            <p>📧 info@scoutingphoenix.nl</p>
+        </div>
+
+        <div>
+            <p>© 2026 Scouting Phoenix</p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
