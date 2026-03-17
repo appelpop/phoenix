@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scouting Phoenix</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #c81e2b;
+    padding: 0 40px;
+    height: 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+/* Zorg dat alles netjes in lijn staat */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Logo/tekst links */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+}
+
+.tagline {
+    font-size: 12px;
+    color: #ffd1d1; /* licht rood/witachtig */
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    background: white;       /* kleur van de cirkel */
+    border-radius: 100%;      /* maakt het rond */
+    padding: 8px;            /* ruimte rondom logo */
+}
+
+.logo span {
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+    padding-bottom: 0px; /* 👈 belangrijk! */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    color: black;
+    top: 100%; /* 👈 beter dan 30px */
+    left: 0;
+    min-width: 130px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: black;
+}
+
+.dropdown-content a:hover {
+    background: #eee;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* HERO */
+.hero {
+    height: 40vh;
+    background: url("images/gebouw.heic") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 50px;
+    color: #ec0505;
+}
+.hero {
+
+    background:
+        linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+        url("images/gebouw.heic") center/cover no-repeat;
+}
+.hero-text {
+    max-width: 1000px;
+    text-align: right;
+    margin-right: 50px;
+}
+
+.hero h1 {
+    font-size: 60px;
+}
+
+/* BUTTONS */
+.button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-red {
+    background: #c81e2b;
+    color: white;
+}
+
+.btn-white {
+    background: white;
+    color: black;
+}
+
+/* CONTENT */
+.section {
+    padding: 60px;
+    background: #f5f5f5;
+}
+
+.section.light {
+    background: #f5f5f5;
+    color: #333;
+}
+
+.text-block {
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    color: #333;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.card-header img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+/* HERGEBRUIK JE NAVBAR + HERO CSS */
+
+/* FORM */
+.form-container {
+    max-width: 700px;
+    margin: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, select, textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+label {
+    font-weight: bold;
+}
+
+button {
+    background: #c81e2b;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #a81822;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="images/vuurvogel.png" alt="Scouting Phoenix logo">
+        <div class="logo-text">
+            <span class="title">Scouting Phoenix Tiel</span>
+            <span class="tagline">-  Vol Vuur Vooruit  -</span>
+        </div>
+
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+
+        <div class="dropdown">
+            <a href="#">Wat is scouting? ▾</a>
+            <div class="dropdown-content">
+                <a href="wat-is-scouting.html">Uitleg</a>
+                <a href="geschiedenis.html">Geschiedenis</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="speltakken.html">Speltakken ▾</a>
+            <div class="dropdown-content">
+                <a href="bevers.html">Bevers</a>
+                <a href="welpen.html">Welpen</a>
+                <a href="scouts.html">Scouts</a>
+                <a href="explorers.html">Explorers</a>
+                <a href="Roverscouts.html">Roverscouts</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Scout worden ▾</a>
+            <div class="dropdown-content">
+                <a href="scout-worden.html">Scout worden</a>
+                <a href="vrijwilligers.html">Vrijwilligers gezocht</a>
+            </div>
+        </div>
+        <a href="contributie.html">Contributie</a>
+        <a href="verhuur.html">Verhuur</a>
+        <a href="#">Contact</a>
+        <div class="dropdown">
+            <a href="#">Disclaimer ▾</a>
+            <div class="dropdown-content">
+                <a href="cameraprotocol.html">Cameraprotocol</a>
+                <a href="gedragscode.html">gedragscode</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Scout worden?</h1>
+    </div>
+</section>
+
+<section class="section light">
+    <div class="form-container">
+
+        <h2>Meld je aan</h2>
+
+        <p>
+            Vul onderstaand formulier in om je aan te melden bij Scouting Phoenix.
+            Je mag eerst 4 keer vrijblijvend komen kijken.
+        </p>
+
+        <!-- FORM -->
+        <form action="https://formspree.io/f/YOUR_ID" method="POST">
+
+            <h3>Gegevens kind</h3>
+
+            <label>Naam kind</label>
+            <input type="text" name="naam_kind" required>
+
+            <label>Geboortedatum</label>
+            <input type="date" name="geboortedatum" required>
+
+            <label>Adres</label>
+            <input type="text" name="adres">
+
+            <label>Postcode</label>
+            <input type="text" name="postcode">
+
+            <label>Woonplaats</label>
+            <input type="text" name="woonplaats">
+
+            <h3>Ouder / verzorger</h3>
+
+            <label>Naam ouder/verzorger</label>
+            <input type="text" name="ouder">
+
+            <label>Email</label>
+            <input type="email" name="email" required>
+
+            <label>Telefoonnummer</label>
+            <input type="tel" name="telefoon">
+
+            <h3>Extra informatie</h3>
+
+            <label>Gewenste speltak</label>
+            <select name="speltak">
+                <option>Bevers (5-7)</option>
+                <option>Welpen (7-11)</option>
+                <option>Scouts (11-15)</option>
+                <option>Explorers (15-18)</option>
+                <option>Roverscouts (18-21)</option>
+            </select>
+
+            <label>Opmerkingen</label>
+            <textarea name="bericht"></textarea>
+
+            <label>
+                <input type="checkbox" required>
+                Ik ga akkoord met het opslaan van mijn gegevens
+            </label>
+
+            <button type="submit">Aanmelden</button>
+
+        </form>
+
+    </div>
+</section>
+
+
+
+
+<footer>
+    <div class="footer-content">
+        <div>
+            <h3>Scouting Phoenix Tiel</h3>
+            <p>- Vol Vuur Vooruit -</p>
+        </div>
+
+        <div>
+            <p>📍 Hennepe, Tiel</p>
+            <p>📧 info@scoutingphoenix.nl</p>
+        </div>
+
+        <div>
+            <p>© 2026 Scouting Phoenix</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>
+
+
+

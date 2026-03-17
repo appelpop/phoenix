@@ -82,14 +82,16 @@ nav a {
 /* DROPDOWN */
 .dropdown {
     position: relative;
+    padding-bottom: 0px; /* 👈 belangrijk! */
 }
 
 .dropdown-content {
     display: none;
     position: absolute;
-    background: white;
+    background: #faf6f6;
     color: black;
-    top: 30px;
+    top: 100%; /* 👈 beter dan 30px */
+    left: 0;
     min-width: 180px;
     border-radius: 8px;
     overflow: hidden;
@@ -186,9 +188,14 @@ nav a {
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: 0.3s;
 }
-
+.card {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
 .card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
 }
 .card-header {
     display: flex;
@@ -235,24 +242,39 @@ footer {
         <div class="dropdown">
             <a href="#">Wat is scouting? ▾</a>
             <div class="dropdown-content">
-                <a href="#">Uitleg</a>
-                <a href="#">Geschiedenis</a>
+                <a href="wat-is-scouting.html">Uitleg</a>
+                <a href="geschiedenis.html">Geschiedenis</a>
             </div>
         </div>
+        <div class="dropdown">
+            <a href="speltakken.html">Speltakken ▾</a>
+            <div class="dropdown-content">
+                <a href="bevers.html">Bevers</a>
+                <a href="welpen.html">Welpen</a>
+                <a href="scouts.html">Scouts</a>
+                <a href="explorers.html">Explorers</a>
+                <a href="Roverscouts.html">Roverscouts</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Scout worden ▾</a>
+             <div class="dropdown-content">
+                 <a href="scout-worden.html">Scout worden</a>
+                 <a href="vrijwilligers.html">Vrijwilligers gezocht</a>
+             </div>
+        </div>
+        
+        <a href="contributie.html">Contributie</a>
+        <a href="verhuur.html">Verhuur</a>
+        <a href="#">Contact</a>
 
         <div class="dropdown">
-            <a href="#">Speltakken ▾</a>
+            <a href="#">Disclaimer ▾</a>
             <div class="dropdown-content">
-                <a href="#">Bevers</a>
-                <a href="#">Welpen</a>
-                <a href="#">Scouts</a>
-                <a href="#">Explorers</a>
-                <a href="#">Roverscouts</a>
+                <a href="cameraprotocol.html">Cameraprotocol</a>
+                <a href="gedragscode.html">gedragscode</a>
             </div>
         </div>
-
-        <a href="#">Verhuur</a>
-        <a href="#">Contact</a>
     </nav>
 </header>
 
@@ -293,25 +315,26 @@ footer {
     <h2>De Speltakken</h2>
 
     <div class="cards">
-        <div class="card">
+        <a href="bevers.html" class="card">
             <div class="card-header">
                 <img src="images/bevers.png" alt="Bevers">
                 <h3>Bevers</h3>
             </div>
             <p><strong>5 - 7 jaar</strong></p>
             <p>Spelenderwijs ontdekken kinderen de wereld en beleven hun eerste avonturen.</p>
-        </div>
 
-        <div class="card">
+        </a>
+
+        <a href="welpen.html" class="card">
             <div class="card-header">
                 <img src="images/welpen.png" alt="welpen">
                 <h3>welpen</h3>
             </div>
             <p><strong>7 - 11 jaar</strong></p>
             <p>Actieve programma’s met natuur, spel en samenwerking.</p>
-        </div>
+        </a>
 
-        <div class="card">
+        <a href="scouts.html" class="card">
             <div class="card-header">
                 <img src="images/Scouts.png" alt="Scouts">
                 <h3>Scouts</h3>
@@ -319,9 +342,9 @@ footer {
 
             <p><strong>11 - 15 jaar</strong></p>
             <p>Meer uitdaging, techniek en echte outdoor skills.</p>
-        </div>
+        </a>
 
-        <div class="card">
+        <a href="Explorers.html" class="card">
             <div class="card-header">
                 <img src="images/Explorers.png" alt="Explorers">
                 <h3>Explorers</h3>
@@ -329,9 +352,9 @@ footer {
 
             <p><strong>15 - 18 jaar</strong></p>
             <p>Zelfstandigheid en eigen activiteiten organiseren.</p>
-        </div>
+        </a>
 
-        <div class="card">
+        <a href="Roverscouts.html" class="card">
             <div class="card-header">
                 <img src="images/Roverscouts.png" alt="Roverscouts">
                 <h3>Roverscouts</h3>
@@ -339,7 +362,7 @@ footer {
 
             <p><strong>18 - 21 jaar</strong></p>
             <p>Vrijheid, avontuur en gezelligheid.</p>
-        </div>
+        </a>
     </div>
 </section>
 <footer>

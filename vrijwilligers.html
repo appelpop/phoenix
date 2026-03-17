@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scouting Phoenix</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #c81e2b;
+    padding: 0 40px;
+    height: 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+/* Zorg dat alles netjes in lijn staat */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Logo/tekst links */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+}
+
+.tagline {
+    font-size: 12px;
+    color: #ffd1d1; /* licht rood/witachtig */
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    background: white;       /* kleur van de cirkel */
+    border-radius: 100%;      /* maakt het rond */
+    padding: 8px;            /* ruimte rondom logo */
+}
+
+.logo span {
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+    padding-bottom: 0px; /* 👈 belangrijk! */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    color: black;
+    top: 100%; /* 👈 beter dan 30px */
+    left: 0;
+    min-width: 180px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: black;
+}
+
+.dropdown-content a:hover {
+    background: #eee;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* HERO */
+.hero {
+    height: 40vh;
+    background: url("images/gebouw.heic") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 50px;
+    color: #ec0505;
+}
+.hero {
+
+    background:
+        linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+        url("images/gebouw.heic") center/cover no-repeat;
+}
+.hero-text {
+    max-width: 1000px;
+    text-align: right;
+    margin-right: 50px;
+}
+
+.hero h1 {
+    font-size: 60px;
+}
+
+/* BUTTONS */
+.button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-red {
+    background: #c81e2b;
+    color: white;
+}
+
+.btn-white {
+    background: white;
+    color: black;
+}
+
+/* CONTENT */
+.section {
+    padding: 60px;
+    background: #f5f5f5;
+}
+
+.section.light {
+    background: #f5f5f5;
+    color: #333;
+}
+
+.text-block {
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    color: #333;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.card-header img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="images/vuurvogel.png" alt="Scouting Phoenix logo">
+        <div class="logo-text">
+            <span class="title">Scouting Phoenix Tiel</span>
+            <span class="tagline">-  Vol Vuur Vooruit  -</span>
+        </div>
+
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+
+        <div class="dropdown">
+            <a href="#">Wat is scouting? ▾</a>
+            <div class="dropdown-content">
+                <a href="wat-is-scouting.html">Uitleg</a>
+                <a href="geschiedenis.html">Geschiedenis</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="speltakken.html">Speltakken ▾</a>
+            <div class="dropdown-content">
+                <a href="bevers.html">Bevers</a>
+                <a href="welpen.html">Welpen</a>
+                <a href="scouts.html">Scouts</a>
+                <a href="explorers.html">Explorers</a>
+                <a href="Roverscouts.html">Roverscouts</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Scout worden ▾</a>
+            <div class="dropdown-content">
+                <a href="scout-worden.html">Scout worden</a>
+                <a href="vrijwilligers.html">Vrijwilligers gezocht</a>
+            </div>
+        </div>
+        <a href="contributie.html">Contributie</a>
+        <a href="verhuur.html">Verhuur</a>
+        <a href="#">Contact</a>
+        <div class="dropdown">
+            <a href="#">Disclaimer ▾</a>
+            <div class="dropdown-content">
+                <a href="cameraprotocol.html">Cameraprotocol</a>
+                <a href="gedragscode.html">gedragscode</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Vrijwilligers gezocht!</h1>
+    </div>
+</section>
+
+<section class="section light">
+    <h2>Vrijwilligers gezocht!</h2>
+
+    <div class="text-block">
+        <p>
+            Scouting Phoenix Tiel is een levendige vereniging en altijd op zoek naar vrijwilligers om ons enthousiaste team aan te vullen.
+          Zo zoeken we leiding voor diverse speltakken en kunnen we in het bestuur altijd ondersteuning gebruiken.
+          Past dat niet bij je, maar wil je wel graag incidenteel helpen? Meld je dan aan voor de Vrienden van Phoenix (VVP).
+        </p>
+
+        <p>
+            Voor meer informatie over de vacatures, de VVP of andere vragen over vrijwilligerswerk, neem contact op met info@scoutingphoenix.nl.
+        </p>
+
+        <p>
+            Als leidinggevende bij één van onze speltakken (Bevers, Welpen of Scouts) zorg je, samen met de rest van je leidingteam,
+          voor een te gek programma voor de kinderen, waarbij kinderen worden uitgedaagd zich persoonlijk te ontwikkelen.
+          Onze speltakken komen elke zaterdag samen (in de ochtend of middag) en draaien dan een “opkomst” van ongeveer 2 uur.
+          Buiten deze opkomsten bereid je als leidingteam het programma en de eventuele weekenden en kampen voor.
+        </p>
+    </div>
+</section>
+
+<section class="section light">
+    <h2>Bestuursfunktie Voorzitter</h2>
+
+    <div class="text-block">
+        <p>
+            Als voorzitter van onze scoutinggroep ben je wel betrokken bij het reilen en zeilen van onze vereniging,
+          maar sta je wat verder van de speltakken af. Dit kan dus een ideale functie zijn als je niet elke zaterdag leiding kan geven,
+          maar wel betrokken wil zijn bij onze vereniging. Samen met de andere bestuursleden ben je verantwoordelijk voor het korte- en langetermijnbeleid van de vereniging,
+          leid je de Groepsraad en de bestuursvergaderingen, en ben je de vertegenwoordiger van onze scoutinggroep naar buiten toe,
+          bijvoorbeeld naar andere groepen of naar de gemeente.
+          Je wordt benoemd voor een periode van 3 jaar met de mogelijkheid tot herbenoeming.
+        </p>
+    </div>
+</section>
+
+<section class="section light">
+    <h2>Bestuursfunktie Secretaris</h2>
+
+    <div class="text-block">
+        <p>
+            Als secretaris van onze scoutinggroep ben je wel betrokken bij het reilen en zeilen van onze vereniging,
+          maar sta je wat verder van de speltakken af. Dit kan dus een ideale functie zijn als je niet elke zaterdag leiding kan geven,
+          maar wel betrokken wil zijn bij onze vereniging. Samen met de andere bestuursleden ben je verantwoordelijk voor het korte- en langetermijnbeleid van de vereniging,
+          notuleer je de Groepsraad en de bestuursvergaderingen, en verzorg je de communicatie van onze scoutinggroep naar buiten toe,
+          bijvoorbeeld naar andere groepen of naar de gemeente.
+          Je wordt benoemd voor een periode van 3 jaar met de mogelijkheid tot herbenoeming.
+        </p>
+    </div>
+</section>
+
+<section class="section light">
+    <h2>Waar zijn we naar op zoek?</h2>
+
+    <div class="text-block">
+        <p>
+            Iedereen die enthousiast is over het leveren van een bijdrage aan de persoonlijke ontwikkeling van kinderen en jongeren kan vrijwilliger worden.
+          Zolang je affiniteit hebt met kinderen binnen de leeftijdsgroep van 5 tot 15 jaar ben je welkom om als leiding aan de slag te gaan.
+        </p>
+
+        <p>
+            Ook voor de functie van voorzitter is het niet noodzakelijk om Scouting-ervaring te hebben.
+          We kunnen je snel en makkelijk wegwijs maken binnen de groep en je helpen om je rol als bestuurslid goed te vervullen.
+        </p>
+        <p>
+          Wil je meer informatie en/of een afspraak maken om eens mee te kijken? Neem dan, geheel vrijblijvend, contact op met Paulien van Gorkom via groepsbegeleider@scoutingphoenix.nl.
+          Mocht je meer informatie willen over de functie van voorzitter, kan je contact opnemen met Jan Jaspar via secretaris@scoutingphoenix.nl.
+        </p>
+    </div>
+</section>
+<footer>
+    <div class="footer-content">
+        <div>
+            <h3>Scouting Phoenix Tiel</h3>
+            <p>- Vol Vuur Vooruit -</p>
+        </div>
+
+        <div>
+            <p>📍 Hennepe, Tiel</p>
+            <p>📧 info@scoutingphoenix.nl</p>
+        </div>
+
+        <div>
+            <p>© 2026 Scouting Phoenix</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

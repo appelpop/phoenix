@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scouting Phoenix</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #c81e2b;
+    padding: 0 40px;
+    height: 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+/* Zorg dat alles netjes in lijn staat */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Logo/tekst links */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+}
+
+.tagline {
+    font-size: 12px;
+    color: #ffd1d1; /* licht rood/witachtig */
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    background: white;       /* kleur van de cirkel */
+    border-radius: 100%;      /* maakt het rond */
+    padding: 8px;            /* ruimte rondom logo */
+}
+
+.logo span {
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+    padding-bottom: 0px; /* 👈 belangrijk! */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    color: black;
+    top: 100%; /* 👈 beter dan 30px */
+    left: 0;
+    min-width: 130px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: black;
+}
+
+.dropdown-content a:hover {
+    background: #eee;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* HERO */
+.hero {
+    height: 40vh;
+    background: url("images/gebouw.heic") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 50px;
+    color: #ec0505;
+}
+.hero {
+
+    background:
+        linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+        url("images/gebouw.heic") center/cover no-repeat;
+}
+.hero-text {
+    max-width: 1000px;
+    text-align: right;
+    margin-right: 50px;
+}
+
+.hero h1 {
+    font-size: 60px;
+}
+
+/* BUTTONS */
+.button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-red {
+    background: #c81e2b;
+    color: white;
+}
+
+.btn-white {
+    background: white;
+    color: black;
+}
+
+/* CONTENT */
+.section {
+
+    margin-top: 20px;
+    margin-left: 60px;
+    background: #ffffff;
+}
+
+.section.light {
+
+    color: #333;
+}
+
+.text-block {
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    color: #333;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.card-header img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="images/vuurvogel.png" alt="Scouting Phoenix logo">
+        <div class="logo-text">
+            <span class="title">Scouting Phoenix Tiel</span>
+            <span class="tagline">-  Vol Vuur Vooruit  -</span>
+        </div>
+
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+
+        <div class="dropdown">
+            <a href="#">Wat is scouting? ▾</a>
+            <div class="dropdown-content">
+                <a href="wat-is-scouting.html">Uitleg</a>
+                <a href="geschiedenis.html">Geschiedenis</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="speltakken.html">Speltakken ▾</a>
+            <div class="dropdown-content">
+                <a href="bevers.html">Bevers</a>
+                <a href="welpen.html">Welpen</a>
+                <a href="scouts.html">Scouts</a>
+                <a href="explorers.html">Explorers</a>
+                <a href="Roverscouts.html">Roverscouts</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Scout worden ▾</a>
+            <div class="dropdown-content">
+                <a href="scout-worden.html">Scout worden</a>
+                <a href="vrijwilligers.html">Vrijwilligers gezocht</a>
+            </div>
+        </div>
+        <a href="contributie.html">Contributie</a>
+        <a href="verhuur.html">Verhuur</a>
+        <a href="#">Contact</a>
+        <div class="dropdown">
+            <a href="#">Disclaimer ▾</a>
+            <div class="dropdown-content">
+                <a href="cameraprotocol.html">Cameraprotocol</a>
+                <a href="gedragscode.html">gedragscode</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Gedragscode</h1>
+    </div>
+</section>
+
+<section class="section light">
+    <h2>Preventie en integriteitsbeleid</h2>
+
+    <div class="text-block">
+        <p>
+            Binnen Scouting Phoenix Tiel wordt gewerkt met minderjarige kinderen.
+            Het belangrijkste uitgangspunt van onze organisatie is dat deze kinderen
+            bij onze vrijwilligers in veilige handen zijn.
+        </p>
+
+        <p>
+            Als scoutinggroep doen wij er alles aan om deze veiligheid te waarborgen.
+            Op deze pagina lees je hoe wij dat doen.
+        </p>
+    </div>
+</section>
+
+<section class="section light">
+    <h2>VOG (Verklaring Omtrent Gedrag)</h2>
+
+    <div class="text-block">
+        <p>
+            Elke vrijwilliger binnen onze organisatie is verplicht een VOG aan te vragen.
+        </p>
+
+        <p>
+            Het Ministerie van Volksgezondheid, Welzijn en Sport controleert of er in het verleden
+            zaken zijn geweest die de integriteit van de vrijwilliger in twijfel trekken.
+        </p>
+
+        <p>
+            Zonder VOG mag een vrijwilliger niet bij ons aan de slag.
+        </p>
+    </div>
+</section>
+
+<section class="section light">
+    <h2>Gedragsregels</h2>
+
+    <div class="text-block">
+        <p>
+            Scouting Nederland heeft gedragsregels opgesteld die door alle vrijwilligers worden ondersteund.
+        </p>
+
+        <p>
+            Deze regels zorgen voor een veilige fysieke en sociale omgeving voor jeugdleden en vrijwilligers.
+        </p>
+
+        <p>
+            Er is één duidelijke grens: seksuele handelingen of contacten tussen vrijwilligers en jeugdleden
+            zijn absoluut niet toegestaan.
+        </p>
+    </div>
+</section>
+
+<section class="section light">
+    <h2>Uitgangspunten</h2>
+
+    <ul>
+        <li>De vrijwilliger zorgt voor een veilige en respectvolle omgeving</li>
+        <li>De waardigheid van het jeugdlid wordt nooit aangetast</li>
+        <li>Er wordt niet onnodig in het privéleven van jeugdleden ingegrepen</li>
+        <li>Geen enkele vorm van seksuele benadering is toegestaan</li>
+        <li>Respect voor persoonlijke grenzen en lichamelijk contact</li>
+        <li>Respectvolle omgang tijdens kampen en activiteiten</li>
+        <li>Actieve bescherming tegen misbruik en ongelijkwaardige behandeling</li>
+        <li>Meldplicht bij ongewenst gedrag of vermoedens</li>
+        <li>Geen ongepaste vergoedingen</li>
+    </ul>
+</section>
+
+<section class="section light">
+    <h2>Vertrouwenspersoon</h2>
+
+    <div class="text-block">
+        <p>
+            Scouting Phoenix Tiel heeft een vertrouwenspersoon waar je terecht kunt
+            bij klachten, ongewenst gedrag of als je ergens over wilt praten.
+        </p>
+
+        <p>
+            📧 vertrouwenspersoon@scoutingphoenix.nl
+        </p>
+
+        <p>
+            Ook Scouting Nederland heeft een vertrouwenspersoon:
+            socialeveiligheid@scouting.nl
+        </p>
+    </div>
+</section>
+
+<section class="section light">
+    <h2>Aannamebeleid</h2>
+
+    <div class="text-block">
+        <p>
+            Nieuwe vrijwilligers worden uitgenodigd voor een kennismakingsgesprek
+            met de groepsbegeleider en een bestuurslid.
+        </p>
+
+        <p>
+            Daarna lopen zij enkele weken mee binnen een speltak.
+            In deze periode moet de VOG worden aangevraagd en ontvangen.
+        </p>
+
+        <p>
+            Na een evaluatie wordt besloten of de vrijwilliger blijft.
+            De gedragscode moet dan worden ondertekend.
+        </p>
+    </div>
+</section>
+
+<section class="section light">
+    <h2>Document downloaden</h2>
+
+    <div class="text-block">
+        <p>
+            Download ons volledige "Preventie en integriteitsbeleid gedragscode" document.
+        </p>
+
+        <a href="documenten/gedragscode.pdf" class="button btn-red">
+            Download PDF
+        </a>
+    </div>
+</section>
+
+
+<footer>
+    <div class="footer-content">
+        <div>
+            <h3>Scouting Phoenix Tiel</h3>
+            <p>- Vol Vuur Vooruit -</p>
+        </div>
+
+        <div>
+            <p>📍 Hennepe, Tiel</p>
+            <p>📧 info@scoutingphoenix.nl</p>
+        </div>
+
+        <div>
+            <p>© 2026 Scouting Phoenix</p>
+        </div>
+    </div>
+</footer>
+</body>
+</html>

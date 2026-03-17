@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scouting Phoenix</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #c81e2b;
+    padding: 0 40px;
+    height: 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+/* Zorg dat alles netjes in lijn staat */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Logo/tekst links */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+}
+
+.tagline {
+    font-size: 12px;
+    color: #ffd1d1; /* licht rood/witachtig */
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    background: white;       /* kleur van de cirkel */
+    border-radius: 100%;      /* maakt het rond */
+    padding: 8px;            /* ruimte rondom logo */
+}
+
+.logo span {
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+    padding-bottom: 0px; /* 👈 belangrijk! */
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: white;
+    color: black;
+    top: 100%; /* 👈 beter dan 30px */
+    left: 0;
+    min-width: 130px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    color: black;
+}
+
+.dropdown-content a:hover {
+    background: #eee;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* HERO */
+.hero {
+    height: 40vh;
+    background: url("images/gebouw.heic") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 50px;
+    color: #ec0505;
+}
+.hero {
+
+    background:
+        linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+        url("images/gebouw.heic") center/cover no-repeat;
+}
+.hero-text {
+    max-width: 1000px;
+    text-align: right;
+    margin-right: 50px;
+}
+
+.hero h1 {
+    font-size: 60px;
+}
+
+/* BUTTONS */
+.button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-red {
+    background: #c81e2b;
+    color: white;
+}
+
+.btn-white {
+    background: white;
+    color: black;
+}
+
+/* CONTENT */
+.section {
+    padding: 60px;
+    background: #f5f5f5;
+}
+
+.section.light {
+    background: #f5f5f5;
+    color: #333;
+}
+
+.text-block {
+    max-width: 800px;
+    line-height: 1.6;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    color: #333;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.card-header img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: 0.3s;
+}
+.gallery img {
+    cursor: pointer;
+}
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+/* LIGHTBOX */
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+
+    background: rgba(0,0,0,0.9);
+
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+#lightbox {
+    animation: fadeIn 0.3s;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">
+        <img src="images/vuurvogel.png" alt="Scouting Phoenix logo">
+        <div class="logo-text">
+            <span class="title">Scouting Phoenix Tiel</span>
+            <span class="tagline">-  Vol Vuur Vooruit  -</span>
+        </div>
+
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+
+        <div class="dropdown">
+            <a href="#">Wat is scouting? ▾</a>
+            <div class="dropdown-content">
+                <a href="wat-is-scouting.html">Uitleg</a>
+                <a href="geschiedenis.html">Geschiedenis</a>
+            </div>
+        </div>
+
+        <div class="dropdown">
+            <a href="speltakken.html">Speltakken ▾</a>
+            <div class="dropdown-content">
+                <a href="bevers.html">Bevers</a>
+                <a href="welpen.html">Welpen</a>
+                <a href="scouts.html">Scouts</a>
+                <a href="explorers.html">Explorers</a>
+                <a href="Roverscouts.html">Roverscouts</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Scout worden ▾</a>
+            <div class="dropdown-content">
+                <a href="scout-worden.html">Scout worden</a>
+                <a href="vrijwilligers.html">Vrijwilligers gezocht</a>
+            </div>
+        </div>
+        <a href="contributie.html">Contributie</a>
+        <a href="verhuur.html">Verhuur</a>
+        <a href="#">Contact</a>
+        <div class="dropdown">
+            <a href="#">Disclaimer ▾</a>
+            <div class="dropdown-content">
+                <a href="cameraprotocol.html">Cameraprotocol</a>
+                <a href="gedragscode.html">gedragscode</a>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section class="hero">
+    <div class="hero-text">
+        <h1>Verhuur</h1>
+    </div>
+</section>
+
+<section class="section light">
+    <h2>Ons gebouw huren?</h2>
+
+    <div class="text-block">
+        <p>
+            Scouting Phoenix beschikt over een ruim gebouw dat beschikbaar is voor verhuur.
+        </p>
+
+        <p>
+            Ideaal voor groepen, verenigingen, scholen of activiteiten.
+        </p>
+
+        <p>
+            Ons terrein ligt in een rustige omgeving en biedt volop mogelijkheden voor binnen- en buitenactiviteiten.
+        </p>
+    </div>
+</section>
+
+<section class="section light">
+    <h2>Wat bieden wij?</h2>
+
+    <div class="cards">
+        <div class="card">
+            <h3>🏠 Gebouw</h3>
+            <p>Ruime binnenruimte geschikt voor groepen.</p>
+        </div>
+
+        <div class="card">
+            <h3>🌲 Buiten terrein</h3>
+            <p>Groot terrein voor spellen en activiteiten.</p>
+        </div>
+
+        <div class="card">
+            <h3>🔥 Kampvuurplek</h3>
+            <p>Mogelijkheid om buiten vuur te maken.</p>
+        </div>
+
+        <div class="card">
+            <h3>🚻 Faciliteiten</h3>
+            <p>Sanitair en basisvoorzieningen aanwezig.</p>
+        </div>
+    </div>
+</section>
+<section class="section light">
+    <h2>Foto's van onze locatie</h2>
+
+    <div class="gallery">
+        <img src="images/verhuur/achter.heic" onclick="openImage(this)">
+        <img src="images/verhuur/voor.heic" onclick="openImage(this)">
+        <img src="images/verhuur/vuur.heic" onclick="openImage(this)">
+        <img src="images/verhuur/water.heic" onclick="openImage(this)">
+        <img src="images/verhuur/tuin.heic" onclick="openImage(this)">
+    </div>
+</section>
+
+<!-- Lightbox -->
+<div id="lightbox" onclick="closeImage()">
+    <img id="lightbox-img">
+</div>
+
+
+<section class="section light">
+    <h2>Voor wie is verhuur?</h2>
+
+    <div class="text-block">
+        <p>
+            Ons gebouw is geschikt voor:
+        </p>
+
+        <ul>
+            <li>Scholen</li>
+            <li>Verenigingen</li>
+            <li>Scoutinggroepen</li>
+            <li>Jeugdactiviteiten</li>
+        </ul>
+    </div>
+</section>
+
+<section class="section light">
+    <h2>Prijzen</h2>
+
+    <div class="text-block">
+        <p>
+            Neem contact met ons op voor actuele prijzen en beschikbaarheid.
+        </p>
+    </div>
+</section>
+
+<section class="section light">
+    <h2>Interesse?</h2>
+
+    <div class="text-block">
+        <p>
+            Wil je ons gebouw huren of meer informatie ontvangen?
+            Neem dan contact met ons op.
+        </p>
+
+        <a href="#" class="button btn-red">Contact opnemen</a>
+    </div>
+</section>
+
+
+
+
+<footer>
+    <div class="footer-content">
+        <div>
+            <h3>Scouting Phoenix Tiel</h3>
+            <p>- Vol Vuur Vooruit -</p>
+        </div>
+
+        <div>
+            <p>📍 Hennepe, Tiel</p>
+            <p>📧 info@scoutingphoenix.nl</p>
+        </div>
+
+        <div>
+            <p>© 2026 Scouting Phoenix</p>
+        </div>
+    </div>
+</footer>
+<script>
+function openImage(img) {
+    document.getElementById("lightbox").style.display = "flex";
+    document.getElementById("lightbox-img").src = img.src;
+}
+
+function closeImage() {
+    document.getElementById("lightbox").style.display = "none";
+}
+</script>
+</body>
+</html>
