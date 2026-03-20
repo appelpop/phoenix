@@ -5,220 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Scouting Phoenix</title>
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-/* NAVBAR */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #c81e2b;
-    padding: 0 40px;
-    height: 70px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    box-sizing: border-box;
-    z-index: 1000;
-}
-
-/* Zorg dat alles netjes in lijn staat */
-nav {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Logo/tekst links */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2;
-}
-
-.title {
-    font-weight: bold;
-    font-size: 18px;
-    color: white;
-}
-
-.tagline {
-    font-size: 12px;
-    color: #ffd1d1; /* licht rood/witachtig */
-}
-
-.logo img {
-    width: 40px;
-    height: 40px;
-    background: white;       /* kleur van de cirkel */
-    border-radius: 100%;      /* maakt het rond */
-    padding: 8px;            /* ruimte rondom logo */
-}
-
-.logo span {
-    font-weight: bold;
-    font-size: 18px;
-    color: white;
-}
-
-/* DROPDOWN */
-.dropdown {
-    position: relative;
-    padding-bottom: 0px; /* 👈 belangrijk! */
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background: white;
-    color: black;
-    top: 100%; /* 👈 beter dan 30px */
-    left: 0;
-    min-width: 130px;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 10px;
-    color: black;
-}
-
-.dropdown-content a:hover {
-    background: #eee;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* HERO */
-.hero {
-    height: 40vh;
-    background: url("images/gebouw.heic") center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 50px;
-    color: #ec0505;
-}
-.hero {
-
-    background:
-        linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-        url("images/gebouw.heic") center/cover no-repeat;
-}
-.hero-text {
-    max-width: 1000px;
-    text-align: right;
-    margin-right: 50px;
-}
-
-.hero h1 {
-    font-size: 60px;
-}
-
-/* BUTTONS */
-.button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.btn-red {
-    background: #c81e2b;
-    color: white;
-}
-
-.btn-white {
-    background: white;
-    color: black;
-}
-
-/* CONTENT */
-.section {
-
-    margin-top: 20px;
-    margin-left: 60px;
-    background: #ffffff;
-}
-
-.section.light {
-
-    color: #333;
-}
-
-.text-block {
-    max-width: 800px;
-    line-height: 1.6;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.card {
-    background: white;
-    color: #333;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-.card-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.card-header img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-}
-footer {
-    background: #1a1a1a;
-    color: white;
-    padding: 40px;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -233,20 +20,20 @@ footer {
 
     </div>
 
-    <nav>
+        <nav>
         <a href="index.html">Home</a>
 
         <div class="dropdown">
-            <a href="#">Wat is scouting? ▾</a>
+            <a href="wat-is-scouting.html">Wat is scouting? ▾</a>
             <div class="dropdown-content">
-                <a href="wat-is-scouting.html">Uitleg</a>
+                <a href="wat-is-scouting.html">Wat is scouting?</a>
                 <a href="geschiedenis.html">Geschiedenis</a>
             </div>
         </div>
-
         <div class="dropdown">
             <a href="speltakken.html">Speltakken ▾</a>
             <div class="dropdown-content">
+                <a href="speltakken.html">Speltakken</a>
                 <a href="bevers.html">Bevers</a>
                 <a href="welpen.html">Welpen</a>
                 <a href="scouts.html">Scouts</a>
@@ -255,18 +42,21 @@ footer {
             </div>
         </div>
         <div class="dropdown">
-            <a href="#">Scout worden ▾</a>
-            <div class="dropdown-content">
-                <a href="scout-worden.html">Scout worden</a>
-                <a href="vrijwilligers.html">Vrijwilligers gezocht</a>
-            </div>
+            <a href="scout-worden.html">Scout worden ▾</a>
+             <div class="dropdown-content">
+                 <a href="scout-worden.html">Scout worden</a>
+                 <a href="vrijwilligers.html">Vrijwilligers gezocht!</a>
+             </div>
         </div>
+        
         <a href="contributie.html">Contributie</a>
         <a href="verhuur.html">Verhuur</a>
-        <a href="#">Contact</a>
+        <a href="contact.html">Contact</a>
+
         <div class="dropdown">
-            <a href="#">Disclaimer ▾</a>
+            <a href="disclaimer.html">Disclaimer ▾</a>
             <div class="dropdown-content">
+                <a href="disclaimer.html">Disclaimer</a>
                 <a href="cameraprotocol.html">Cameraprotocol</a>
                 <a href="gedragscode.html">gedragscode</a>
             </div>
@@ -276,124 +66,204 @@ footer {
 
 <section class="hero">
     <div class="hero-text">
+        <div class="hero-box">
         <h1>Cameraprotocol</h1>
+            </div>
     </div>
 </section>
 
 <section class="section light">
-    <h2>Camerabewaking</h2>
+    <h2>Protocol camerabewaking bij Scouting Phoenix Tiel</h2>
 
     <div class="text-block">
         <p>
-            Het complex van Scouting Phoenix Tiel wordt dagelijks bezocht door leden,
-            vrijwilligers en bezoekers.
+            Het complex van Scouting Phoenix Tiel wordt dagelijks bezocht door leden, bezoekers, vrijwilligers en leveranciers.
         </p>
 
         <p>
-            Om eigendommen en veiligheid te beschermen maakt Scouting Phoenix Tiel
-            gebruik van cameratoezicht.
+            De laatste jaren komt het helaas met enige regelmaat voor dat er bezittingen van de club, leden of bezoekers 
+            worden gestolen of vernield. Het bestuur vindt het noodzakelijk om middels cameratoezicht de belangen en 
+            de eigendommen van de vereniging, haar leden en bezoekers waar mogelijk te beschermen.
         </p>
 
         <p>
-            In dit protocol leggen wij uit hoe wij omgaan met camerabeelden.
+            In dit protocol zijn afspraken vastgelegd met betrekking tot het gebruik van de camera's, het bekijken van de beelden en de opslag van het beeldmateriaal.
         </p>
     </div>
 </section>
 
 <section class="section light">
-    <h2>Doel van het cameratoezicht</h2>
+    <h3>Artikel 1. Doel van het cameratoezicht</h3>
 
     <div class="text-block">
-        <p>
-            Het cameratoezicht is bedoeld om eigendommen van de vereniging,
-            leden en bezoekers te beschermen tegen diefstal en vernieling.
-        </p>
-
-        <p>
-            Daarnaast draagt het bij aan de veiligheid op het terrein.
-        </p>
+        <ol>
+            <li>
+                Het doel van het cameratoezicht is het beschermen van de eigendommen van Scouting Phoenix Tiel en 
+                de eigendommen van leden en bezoekers tegen diefstal en/of vernieling.
+            </li>
+            <li>
+                Verder dient het cameratoezicht ter bescherming van de veiligheid van de aanwezigen op het complex.
+            </li>
+        </ol>
     </div>
 </section>
 
 <section class="section light">
-    <h2>Verantwoordelijkheid</h2>
-
-    <ul>
-        <li>Het bestuur is verantwoordelijk voor het cameratoezicht</li>
-        <li>Een bestuurslid beheert het systeem</li>
-        <li>Alleen bevoegde personen mogen beelden bekijken</li>
-        <li>Beelden worden zorgvuldig behandeld</li>
-        <li>Beelden worden alleen gedeeld met politie of justitie</li>
-    </ul>
-</section>
-
-<section class="section light">
-    <h2>Privacy</h2>
-
-    <ul>
-        <li>Cameratoezicht wordt alleen gebruikt voor veiligheid</li>
-        <li>Er hangen borden bij het terrein</li>
-        <li>Bezoekers stemmen in bij betreden van het terrein</li>
-        <li>Camera’s staan uit tijdens reguliere opkomsten</li>
-    </ul>
-</section>
-
-<section class="section light">
-    <h2>Inzage van camerabeelden</h2>
+    <h3>Artikel 2. Taken en verantwoordelijkheden</h3>
 
     <div class="text-block">
-        <p>
-            Beelden worden alleen bekeken bij incidenten zoals diefstal,
-            vernieling of andere calamiteiten.
-        </p>
-
-        <p>
-            Verzoeken kunnen worden ingediend via:
-            groepsbestuur@scoutingphoenix.nl
-        </p>
-
-        <p>
-            Het bestuur beslist binnen 7 dagen over een verzoek.
-        </p>
+        <ol>
+            <li>
+                Het cameratoezicht geschiedt onder de verantwoordelijkheid van het bestuur van Scouting Phoenix Tiel.
+            </li>
+            <li>
+                Het bestuur zal een lid van het bestuur alsmede een vervanger aanwijzen voor het dagelijks beheer van het systeem. 
+                Alleen dit bestuurslid en zijn vervanger zijn namens het bestuur bevoegd camerabeelden te bekijken.
+            </li>
+            <li>
+                Het bestuurslid dat het dagelijks beheer voert stelt de beelden direct veilig wanneer 
+                hiertoe een verzoek wordt gedaan door het bestuur van Scouting Phoenix Tiel.
+            </li>
+            <li>
+                Het bestuur draagt er zorg voor dat er zorgvuldig met het beeldmateriaal wordt omgegaan wanneer dit in verband met een calamiteit is veiliggesteld.
+            </li>
+            <li>
+                Beelden worden niet aan derden, anders dan aan de politie of officier van justitie, ter beschikking gesteld.
+            </li>
+        </ol>
     </div>
 </section>
+
 <section class="section light">
-    <h2>Verstrekken van beelden</h2>
+    <h3>Artikel 3. Privacy van bezoekers</h3>
 
     <div class="text-block">
-        <p>
-            Camerabeelden worden alleen verstrekt aan politie of justitie,
-            en alleen op officieel verzoek.
-        </p>
+        <ol>
+            <li>
+                Het cameratoezicht is verenigbaar met het doel geweld, diefstal en vernieling te voorkomen. 
+            </li>
+            <li>
+                Het beeldmateriaal wordt uitsluitend gebruikt voor de doelstellingen van het cameratoezicht.
+            </li>
+            <li>
+                Het gebruik van cameratoezicht wordt aangekondigd middels bordjes bij het clubgebouw. 
+            </li>
+            <li>
+                Bezoekers gaan met het betreden van het complex akkoord met het maken van beeldopnames. 
+            </li>
+            <li>
+                Tijdens reguliere opkomsttijden wordt het cameratoezicht uitgeschakeld.
+            </li>
+        </ol>
     </div>
 </section>
 
 <section class="section light">
-    <h2>Camerasysteem en opslag</h2>
-
-    <ul>
-        <li>Er wordt gebruik gemaakt van zichtbare camera’s</li>
-        <li>Geen opnames in toiletten, douches of binnenruimtes</li>
-        <li>Opnames worden 28 dagen bewaard</li>
-        <li>Beelden van incidenten worden langer bewaard</li>
-        <li>Alleen bevoegde personen hebben toegang</li>
-    </ul>
-</section>
-
-<section class="section light">
-    <h2>Informatie en klachten</h2>
+    <h3>Artikel 4. Inzage in opgenomen materiaal</h3>
 
     <div class="text-block">
-        <p>
-            Dit protocol is beschikbaar via de website van Scouting Phoenix Tiel.
-        </p>
-
-        <p>
-            Klachten over cameratoezicht kunnen schriftelijk worden ingediend bij het bestuur.
-        </p>
+        <ol>
+            <li>
+                Beeldmateriaal kan privacygevoelige informatie bevatten. Om deze reden zijn er beperkingen opgesteld voor het inzien van beelden.
+            </li>
+            <li>
+                Alleen het bestuur kan besluiten tot het inzien van camerabeelden. 
+            </li>
+            <p>
+                Het is niet de intentie van Scouting Phoenix Tiel om dit daadwerkelijk te doen. 
+                In principe vindt dit alleen plaats als er een calamiteit  
+                (d.w.z.  geweld, inbraak, vernieling, vermissing en/of diefstal van geld of goederen etc.) heeft plaatsgevonden.
+            </p>
+            <li>
+                Er zal door het bestuur een onafhankelijke vertrouwenscontactpersoon worden aangesteld. 
+                Als iemand een verzoek om raadpleging doet dan zal het bestuur dit verzoek voor advies voorleggen aan de vertrouwens-contactpersoon.
+            </li>
+            <li>
+                Indien leden, vrijwilligers, ouders en/of bezoekers gerichte aanleiding hebben om camerabeelden 
+                te laten raadplegen dan kunnen zij middels een email aan het bestuur (groepsbestuur@scoutingphoenix.nl) 
+                een verzoek indienen bij het bestuur van Scouting Phoenix Tiel of de vertrouwenscontactpersoon. 
+            </li>
+            <p>
+                Bij het indienen van een aanvraag dient de betrokkene aan te geven waar, op welk tijdstip en in welke tijdsbestek de beelden zijn gemaakt. 
+            </p>
+            <li>
+                Het bestuur van Scouting Phoenix Tiel beslist binnen 7 dagen op een verzoek tot raadpleging van beeldmateriaal. 
+            </li>
+            <li>
+                Beeldmateriaal mag alleen door het hiervoor aangewezen bestuurslid of zijn vervanger, samen met de vertrouwenscontactpersoon worden bekeken. 
+            </li>
+            <li>
+                Beeldmateriaal zal niet ter inzage aan betrokkenen worden gegeven. 
+            </li>
+        </ol>
     </div>
 </section>
 
+<section class="section light">
+    <h3>Artikel 5. Verstrekken van opgenomen beeldmateriaal aan derden</h3>
+
+    <div class="text-block">
+        <ol>
+            <li>
+                Alleen op verzoek van de politie of officier van justitie worden beelden overgedragen aan de politie.
+            </li>
+            <li>
+                Het bestuur zal een verzoek van de politie om ter beschikking stelling van beeldmateriaal voor advies voorleggen aan de vertrouwenscontactpersoon. 
+            </li>
+            <li>
+                De persoon die namens de politie de beelden in ontvangst neemt dient zich van te voren te legitimeren. 
+                Deze persoon dient te tekenen voor ontvangst en integer gebruik van het beeldmateriaal.
+            </li>
+        </ol>
+    </div>
+</section>
+
+<section class="section light">
+    <h3>Artikel 6. Het camerasysteem en de beveiliging</h3>
+
+    <div class="text-block">
+        <ol>
+            <li>
+                Er wordt gebruik gemaakt van zichtbare camera's die opnamen maken.
+            </li>
+            <li>
+                Er worden geen opnames gemaakt in spellokalen, toiletten en douches. 
+            </li>
+            <li>
+                Opnames vinden 24 uur per dag, gedurende het gehele jaar plaats. Uitgezonderd zijn de reguliere opkomsttijdstippen. 
+                Daarbij wordt geen rekening gehouden met afwijkende opkomsttijden, kampen of overige activiteiten buiten het reguliere tijdsvenster.
+            </li>
+            <li>
+                De recorder is afgesloten voor derden. Alleen het daartoe bevoegde bestuurslid en 
+                de leverancier van de apparatuur (onder begeleiding van het bevoegde bestuurslid), hebben toegang tot de recorder.
+            </li>
+            <li>
+                De opnames worden iedere 28 dagen overschreven. 
+            </li>
+            <li>
+                Beelden van incidenten, die worden veiliggesteld, worden bewaard tot het incident is afgehandeld.
+            </li>
+            <li>
+                Camerabeelden die gebruikt worden in het kader van een onderzoek waarvan aangifte is gedaan bij de politie, worden pas vernietigd na overleg met de politie.
+            </li>
+        </ol>
+    </div>
+</section>
+
+<section class="section light">
+    <h3>Artikel 7. Informatieverstrekking</h3>
+
+    <div class="text-block">
+        <ol>
+            <li>
+                Dit protocol zal via de website van Scouting Phoenix Tiel worden gepubliceerd.
+            </li>
+            <li>
+                Klachten aangaande de camerabeveiliging dienen schriftelijk te worden ingediend bij het bestuur van Scouting Phoenix Tiel.
+            </li>
+        </ol>
+    </div>
+</section>
 
 
 
@@ -405,8 +275,10 @@ footer {
         </div>
 
         <div>
-            <p>📍 Hennepe, Tiel</p>
-            <p>📧 info@scoutingphoenix.nl</p>
+            <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=Hennepe+199+Tiel" target="_blank">Hennepe 199, Tiel</a></p>
+            
+
+            <p>📧 <a href="mailto:info@scoutingphoenix.nl">info@scoutingphoenix.nl</a></p>
         </div>
 
         <div>
@@ -416,3 +288,6 @@ footer {
 </footer>
 </body>
 </html>
+
+
+

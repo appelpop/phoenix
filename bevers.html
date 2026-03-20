@@ -5,218 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Scouting Phoenix</title>
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-/* NAVBAR */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #c81e2b;
-    padding: 0 40px;
-    height: 70px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    box-sizing: border-box;
-    z-index: 1000;
-}
-
-/* Zorg dat alles netjes in lijn staat */
-nav {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Logo/tekst links */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2;
-}
-
-.title {
-    font-weight: bold;
-    font-size: 18px;
-    color: white;
-}
-
-.tagline {
-    font-size: 12px;
-    color: #ffd1d1; /* licht rood/witachtig */
-}
-
-.logo img {
-    width: 40px;
-    height: 40px;
-    background: white;       /* kleur van de cirkel */
-    border-radius: 100%;      /* maakt het rond */
-    padding: 8px;            /* ruimte rondom logo */
-}
-
-.logo span {
-    font-weight: bold;
-    font-size: 18px;
-    color: white;
-}
-
-/* DROPDOWN */
-.dropdown {
-    position: relative;
-    padding-bottom: 0px; /* 👈 belangrijk! */
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background: white;
-    color: black;
-    top: 100%; /* 👈 beter dan 30px */
-    left: 0;
-    min-width: 130px;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 10px;
-    color: black;
-}
-
-.dropdown-content a:hover {
-    background: #eee;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* HERO */
-.hero {
-    height: 40vh;
-    background: url("images/gebouw.heic") center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 50px;
-    color: #ec0505;
-}
-.hero {
-
-    background:
-        linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-        url("images/gebouw.heic") center/cover no-repeat;
-}
-.hero-text {
-    max-width: 1000px;
-    text-align: right;
-    margin-right: 50px;
-}
-
-.hero h1 {
-    font-size: 60px;
-}
-
-/* BUTTONS */
-.button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.btn-red {
-    background: #c81e2b;
-    color: white;
-}
-
-.btn-white {
-    background: white;
-    color: black;
-}
-
-/* CONTENT */
-.section {
-    padding: 60px;
-    background: #f5f5f5;
-}
-
-.section.light {
-    background: #f5f5f5;
-    color: #333;
-}
-
-.text-block {
-    max-width: 800px;
-    line-height: 1.6;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.card {
-    background: white;
-    color: #333;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-.card-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.card-header img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-}
-footer {
-    background: #1a1a1a;
-    color: white;
-    padding: 40px;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -231,20 +20,20 @@ footer {
 
     </div>
 
-    <nav>
+        <nav>
         <a href="index.html">Home</a>
 
         <div class="dropdown">
-            <a href="#">Wat is scouting? ▾</a>
+            <a href="wat-is-scouting.html">Wat is scouting? ▾</a>
             <div class="dropdown-content">
-                <a href="wat-is-scouting.html">Uitleg</a>
+                <a href="wat-is-scouting.html">Wat is scouting?</a>
                 <a href="geschiedenis.html">Geschiedenis</a>
             </div>
         </div>
-
         <div class="dropdown">
             <a href="speltakken.html">Speltakken ▾</a>
             <div class="dropdown-content">
+                <a href="speltakken.html">Speltakken</a>
                 <a href="bevers.html">Bevers</a>
                 <a href="welpen.html">Welpen</a>
                 <a href="scouts.html">Scouts</a>
@@ -252,19 +41,22 @@ footer {
                 <a href="Roverscouts.html">Roverscouts</a>
             </div>
         </div>
-       <div class="dropdown">
-            <a href="#">Scout worden ▾</a>
-            <div class="dropdown-content">
-                <a href="scout-worden.html">Scout worden</a>
-                <a href="vrijwilligers.html">Vrijwilligers gezocht</a>
-            </div>
+        <div class="dropdown">
+            <a href="scout-worden.html">Scout worden ▾</a>
+             <div class="dropdown-content">
+                 <a href="scout-worden.html">Scout worden</a>
+                 <a href="vrijwilligers.html">Vrijwilligers gezocht!</a>
+             </div>
         </div>
+        
         <a href="contributie.html">Contributie</a>
         <a href="verhuur.html">Verhuur</a>
-        <a href="#">Contact</a>
+        <a href="contact.html">Contact</a>
+
         <div class="dropdown">
-            <a href="#">Disclaimer ▾</a>
+            <a href="disclaimer.html">Disclaimer ▾</a>
             <div class="dropdown-content">
+                <a href="disclaimer.html">Disclaimer</a>
                 <a href="cameraprotocol.html">Cameraprotocol</a>
                 <a href="gedragscode.html">gedragscode</a>
             </div>
@@ -274,66 +66,75 @@ footer {
 
 <section class="hero">
     <div class="hero-text">
+        <div class="hero-box">
         <h1>Bevers</h1>
         <img src="images/bevers.png" alt="Bevers">
+        </div>
     </div>
 </section>
 
 <section class="section light">
-    <h2>Wat zijn Bevers?</h2>
+    <h2>Bevers (5 - 7 jaar)</h2>
 
     <div class="text-block">
         <p>
-            De Bevers zijn de jongste speltak van Scouting en zijn voor kinderen van 5 tot 7 jaar.
+            Ben jij tussen de 5 en 7 jaar? Vind je het leuk om iedere week iets leuks te doen, 
+            lekker buiten te spelen en allemaal dingen te leren? Kom dan bij de bevers! 
+            Hier doe je allemaal leuke spelletjes met kinderen die even oud zijn als jij.
         </p>
 
         <p>
-            Bij de Bevers staat spelenderwijs ontdekken centraal.
-            Kinderen leren samenwerken, maken nieuwe vrienden en beleven elke week een nieuw avontuur.
+            De kinderen van 5 tot en met 7 jaar worden bij Scouting 'bevers' genoemd. 
+            Bij de bevers ligt de nadruk op het spelen en leren in de natuur. 
+            Ze doen samen met andere kinderen leuke spelletjes in een veilige omgeving. 
+            Zo leren ze spelenderwijs samen te werken onder leiding van deskundige vrijwilligers. 
+            Lees meer over wat Scouting is.
         </p>
     </div>
 </section>
+
 <section class="section light">
-    <h2>Wat doen Bevers?</h2>
-
-    <div class="cards">
-        <div class="card">
-            <h3>🎨 Spel & Creativiteit</h3>
-            <p>Knutselen, tekenen en leuke spelletjes doen.</p>
-        </div>
-
-        <div class="card">
-            <h3>🌲 Buiten spelen</h3>
-            <p>Ontdekken in de natuur en lekker actief bezig zijn.</p>
-        </div>
-
-        <div class="card">
-            <h3>👫 Samenwerken</h3>
-            <p>Leren samenwerken en nieuwe vriendjes maken.</p>
-        </div>
-    </div>
-</section>
-<section class="section light">
-    <h2>Wanneer draaien de Bevers?</h2>
+    <h3>Spelen in thema</h3>
 
     <div class="text-block">
         <p>
-            De Bevers draaien elke week op zaterdag.
+            De bevers spelen in het thema van het dorp Hotsjietonia en gebruiken hierbij hun fantasie. 
+            Dit draagt bij aan de ontwikkeling van de kinderen. 
+            In het dorp Hotsjietonia wonen allerlei verschillende mensen, waaronder Stuiter. 
+            Stuiter is een bever die dezelfde groei en ontwikkeling doormaakt als de bevers in een groep. 
+            Stuiter is een androgyn figuur, zodat zowel jongens als meiden zich met Stuiter kunnen identificeren.
         </p>
 
         <p>
-            Tijdens de opkomsten beleven ze avonturen in het thema van Hotsjietonia,
-            de fantasiewereld van de Bevers.
+            In het dorp Hotsjietonia maken de bevers allerlei avonturen mee en leren ze van alles en nog wat. 
+            Ze knutselen en zingen met Keet en Fleur Kleur, ze leren dingen over de natuur bij Bas Bos en Rebbel, 
+            ze horen over andere landen bij Sterre en Steven Stroom, 
+            komen tot rust bij Noa en gaan koken met Rozemarijn. Ook met Professor Plof en Stanley Stekker is er 
+            altijd wat te beleven. De verschillende activiteitengebieden (verzamelingen van activiteiten die 
+            qua onderwerp bij elkaar horen) zorgen ervoor dat er veel variatie in het programma zit en 
+            kinderen elke week iets anders doen. De vaardigheden die kinderen bij de bevers opdoen, 
+            worden uitgebouwd bij de welpen zodat kinderen zich continu blijven ontwikkelen. 
+            Dit wordt bij Scouting de 'doorlopende leerlijn' genoemd.
         </p>
     </div>
 </section>
+
+<section class="section light">
+    <h3>Wanneer draaien de Bevers?</h3>
+
+    <div class="text-block">
+        <p>
+            Binnen onze vereniging hebben de Bevers elke week op zaterdag opkomst van 12.00 uur tot 14.00 uur.
+        </p>
+    </div>
+</section>
+
 <section class="section light">
     <h2>Kom een keer kijken!</h2>
 
     <div class="text-block">
         <p>
-            Nieuwsgierig geworden? Kom gerust een paar keer gratis meedraaien
-            en ontdek of Scouting iets voor jou is!
+            Wil je een keer komen kijken? Neem contact op via het Scout worden formulier!
         </p>
 
         <a href="scout-worden.html" class="button btn-red">Neem contact op</a>
@@ -351,8 +152,10 @@ footer {
         </div>
 
         <div>
-            <p>📍 Hennepe, Tiel</p>
-            <p>📧 info@scoutingphoenix.nl</p>
+            <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=Hennepe+199+Tiel" target="_blank">Hennepe 199, Tiel</a></p>
+            
+
+            <p>📧 <a href="mailto:info@scoutingphoenix.nl">info@scoutingphoenix.nl</a></p>
         </div>
 
         <div>
@@ -362,3 +165,6 @@ footer {
 </footer>
 </body>
 </html>
+
+
+
