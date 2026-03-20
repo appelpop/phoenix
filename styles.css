@@ -1,0 +1,396 @@
+@font-face {
+    font-family: 'League Spartan';
+    src: url('fonts/LeagueSpartan.ttf') format('woff');
+}
+
+/* Global */
+body {
+    margin: 0;
+    font-family: 'League Spartan', sans-serif;
+}
+
+/* NAVBAR */
+header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #C41E3A;
+    padding: 0 40px;
+    height: 70px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    box-sizing: border-box;
+    z-index: 1000;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Logo */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+}
+
+.tagline {
+    font-size: 12px;
+    color: #ffd1d1;
+}
+
+.logo img {
+    width: 40px;
+    height: 40px;
+    background: white;
+    border-radius: 100%;
+    padding: 8px;
+}
+
+.logo span {
+    font-weight: bold;
+    font-size: 18px;
+    color: white;
+}
+
+/* DROPDOWN */
+.dropdown {
+    position: relative;
+    padding-bottom: 0px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 180px;
+    background: #E63A4A;
+    color: white;
+    border-radius: 8px;
+    box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    z-index: 1001;
+    overflow: hidden;
+    transition: opacity 0.2s ease;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 14px;
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.dropdown-content a:hover,
+.dropdown-content a:focus {
+    background: #ff5b6b;
+    color: white;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* HERO */
+.hero {
+    height: 40vh;
+    background:
+        linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
+        url("images/gebouw.png") center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 50px;
+    color: #C41E3A;
+    background-size: cover;
+}
+
+.hero-text {
+    max-width: 1000px;
+    text-align: right;
+    margin-right: 50px;
+}
+
+.hero h1 {
+    font-size: 60px;
+}
+
+/* BUTTONS */
+.button {
+    display: inline-block;
+    margin-top: 10px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-red {
+    background: #C41E3A;
+    color: white;
+}
+
+.btn-white {
+    background: white;
+    color: black;
+}
+
+/* CONTENT */
+.section {
+    padding: 60px;
+    background: #f5f5f5;
+}
+
+.section.light {
+    background: #f5f5f5;
+    color: #333;
+    padding: 60px 20px;
+}
+
+.text-block {
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: left;
+    line-height: 1.6;
+}
+
+.section.light h2,
+.section.light h3 {
+    max-width: 1000px;
+    margin: 0 auto 20px auto;
+    text-align: left;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    color: #333;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.card-header img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+footer {
+    background: #1a1a1a;
+    color: white;
+    padding: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.hero-box {
+    background: rgba(255, 255, 255, 0.5);
+    padding: 20px 40px;
+    border-radius: 12px;
+    backdrop-filter: blur(1px);
+}
+
+.hero-box h1 {
+    margin: 0;
+    color: #C41E3A;
+}
+
+.hero-box img {
+    display: block;
+    margin: 20px auto 0 auto;
+    max-width: 200px;
+}
+
+/* Links in footer (wit) */
+footer a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Links in navigation (wit) */
+nav a {
+    color: white;
+}
+
+/* Links in content (rood) */
+a {
+    color: #C41E3A;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Tables */
+.table-container {
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    margin: 0 auto;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px;
+    text-align: left;
+}
+
+th {
+    background: #C41E3A;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f2f2f2;
+}
+
+/* Form */
+.form-container {
+    max-width: 700px;
+    margin: auto;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input, select, textarea {
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+label {
+    font-weight: bold;
+}
+
+button {
+    background: #C41E3A;
+    color: white;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #a81822;
+}
+
+/* Gallery + lightbox */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.gallery img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.gallery img:hover {
+    transform: scale(1.05);
+}
+
+.calendar-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+#lightbox {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.9);
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    animation: fadeIn 0.3s;
+}
+
+#lightbox img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+}
+
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+}

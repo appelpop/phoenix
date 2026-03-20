@@ -5,218 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Scouting Phoenix</title>
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-/* NAVBAR */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #c81e2b;
-    padding: 0 40px;
-    height: 70px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    box-sizing: border-box;
-    z-index: 1000;
-}
-
-/* Zorg dat alles netjes in lijn staat */
-nav {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Logo/tekst links */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2;
-}
-
-.title {
-    font-weight: bold;
-    font-size: 18px;
-    color: white;
-}
-
-.tagline {
-    font-size: 12px;
-    color: #ffd1d1; /* licht rood/witachtig */
-}
-
-.logo img {
-    width: 40px;
-    height: 40px;
-    background: white;       /* kleur van de cirkel */
-    border-radius: 100%;      /* maakt het rond */
-    padding: 8px;            /* ruimte rondom logo */
-}
-
-.logo span {
-    font-weight: bold;
-    font-size: 18px;
-    color: white;
-}
-
-/* DROPDOWN */
-.dropdown {
-    position: relative;
-    padding-bottom: 0px; /* 👈 belangrijk! */
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background: white;
-    color: black;
-    top: 100%; /* 👈 beter dan 30px */
-    left: 0;
-    min-width: 130px;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 10px;
-    color: black;
-}
-
-.dropdown-content a:hover {
-    background: #eee;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* HERO */
-.hero {
-    height: 40vh;
-    background: url("images/gebouw.heic") center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 50px;
-    color: #ec0505;
-}
-.hero {
-
-    background:
-        linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-        url("images/gebouw.heic") center/cover no-repeat;
-}
-.hero-text {
-    max-width: 1000px;
-    text-align: right;
-    margin-right: 50px;
-}
-
-.hero h1 {
-    font-size: 60px;
-}
-
-/* BUTTONS */
-.button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.btn-red {
-    background: #c81e2b;
-    color: white;
-}
-
-.btn-white {
-    background: white;
-    color: black;
-}
-
-/* CONTENT */
-.section {
-    padding: 60px;
-    background: #f5f5f5;
-}
-
-.section.light {
-    background: #f5f5f5;
-    color: #333;
-}
-
-.text-block {
-    max-width: 800px;
-    line-height: 1.6;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.card {
-    background: white;
-    color: #333;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-.card-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.card-header img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-}
-footer {
-    background: #1a1a1a;
-    color: white;
-    padding: 40px;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -231,20 +20,20 @@ footer {
 
     </div>
 
-    <nav>
+        <nav>
         <a href="index.html">Home</a>
 
         <div class="dropdown">
-            <a href="#">Wat is scouting? ▾</a>
+            <a href="wat-is-scouting.html">Wat is scouting? ▾</a>
             <div class="dropdown-content">
-                <a href="wat-is-scouting.html">Uitleg</a>
+                <a href="wat-is-scouting.html">Wat is scouting?</a>
                 <a href="geschiedenis.html">Geschiedenis</a>
             </div>
         </div>
-
         <div class="dropdown">
             <a href="speltakken.html">Speltakken ▾</a>
             <div class="dropdown-content">
+                <a href="speltakken.html">Speltakken</a>
                 <a href="bevers.html">Bevers</a>
                 <a href="welpen.html">Welpen</a>
                 <a href="scouts.html">Scouts</a>
@@ -253,18 +42,21 @@ footer {
             </div>
         </div>
         <div class="dropdown">
-            <a href="#">Scout worden ▾</a>
-            <div class="dropdown-content">
-                <a href="scout-worden.html">Scout worden</a>
-                <a href="vrijwilligers.html">Vrijwilligers gezocht</a>
-            </div>
+            <a href="scout-worden.html">Scout worden ▾</a>
+             <div class="dropdown-content">
+                 <a href="scout-worden.html">Scout worden</a>
+                 <a href="vrijwilligers.html">Vrijwilligers gezocht!</a>
+             </div>
         </div>
+        
         <a href="contributie.html">Contributie</a>
         <a href="verhuur.html">Verhuur</a>
-        <a href="#">Contact</a>
+        <a href="contact.html">Contact</a>
+
         <div class="dropdown">
-            <a href="#">Disclaimer ▾</a>
+            <a href="disclaimer.html">Disclaimer ▾</a>
             <div class="dropdown-content">
+                <a href="disclaimer.html">Disclaimer</a>
                 <a href="cameraprotocol.html">Cameraprotocol</a>
                 <a href="gedragscode.html">gedragscode</a>
             </div>
@@ -272,88 +64,85 @@ footer {
     </nav>
 </header>
 
+
+
 <section class="hero">
     <div class="hero-text">
+        <div class="hero-box">
         <h1>Scouts</h1>
-    </div>
-</section>
-
-<section class="section light">
-    <h2>Wat zijn Scouts?</h2>
-
-    <div class="text-block">
-        <p>
-            De Scouts zijn jongeren van 11 tot 15 jaar.
-        </p>
-
-        <p>
-            In deze speltak draait het om uitdaging, zelfstandigheid en avontuur.
-            Scouts leren steeds meer zelf organiseren en verantwoordelijkheid nemen.
-        </p>
-
-        <p>
-            Activiteiten worden stoerder en technischer dan bij de jongere groepen.
-        </p>
-    </div>
-</section>
-
-<section class="section light">
-    <h2>Wat doen Scouts?</h2>
-
-    <div class="cards">
-        <div class="card">
-            <h3>🔥 Vuur & koken</h3>
-            <p>Koken op houtvuur en leren omgaan met vuur.</p>
-        </div>
-
-        <div class="card">
-            <h3>🪵 Pionieren</h3>
-            <p>Bouwen met touwen en hout (torens, bruggen).</p>
-        </div>
-
-        <div class="card">
-            <h3>🧭 Navigatie</h3>
-            <p>Kaartlezen, kompas en speurtochten.</p>
+            <img src="images/scouts.png" alt="scouts">
         </div>
     </div>
 </section>
 
 <section class="section light">
-    <h2>Wanneer draaien de Scouts?</h2>
+    <h2>Scouts (11 - 15 jaar)</h2>
 
     <div class="text-block">
         <p>
-            De Scouts draaien meestal op zaterdag of vrijdagavond.
+            Ben jij tussen de 11 en 15 jaar en heb je zin in actie? 
+            Word lid bij één van de 1.000 Scoutinggroepen en beleef uitdagende avonturen bij de scouts! 
+            Samen met je nieuwe vrienden doe je super gave dingen waar je ook nog eens wat van leert. 
+            Leer zeilen, ga op zomerkamp, kook op je eigen kampvuurtje en ontdek de wereld om je heen! 
         </p>
 
         <p>
-            Ze werken vaak in patrouilles (groepjes) en organiseren soms zelf activiteiten.
+            De scouts van 11 tot en met 15 jaar heten 'scouts'. 
+            Scouts zijn niet meer bezig met het spelen in thema, 
+            zoals bij de bevers (5-7 jaar) en de welpen (7-11) jaar het geval is. 
+            Bij de scouts ligt de focus op het bewust ontwikkelen van hun Scoutingkennis en -vaardigheden. 
+            In de Scoutsgids maken scouts kennis met zeven jongeren die samen in een ploeg zitten en 
+            met wie zij zich kunnen identificeren. Zeger, Marloes, Mick, Radboud, Naomi, Tess en Jesper 
+            hebben allemaal hun eigen interesses en karaktereigenschappen. De verschillende activiteitengebieden 
+            (verzamelingen van activiteiten die qua onderwerp bij elkaar horen) zorgen ervoor dat er veel 
+            variatie in het programma zit en kinderen elke week iets anders doen.
         </p>
     </div>
 </section>
+
 <section class="section light">
-    <h2>Kampen</h2>
+    <h3>Zelfstandigheid</h3>
 
     <div class="text-block">
         <p>
-            Scouts gaan elk jaar op kamp, vaak in de natuur.
-            Hier bouwen ze hun eigen kamp, koken zelf en beleven echte avonturen.
+            Naast samenwerking en elkaar helpen als er problemen zijn, is het ook belangrijk dat scouts 
+            (een deel van) een opkomst leren organiseren. Deze groep scouts wordt op deze manier 
+            relatief zelfstandig en de scouts worden voorbereid op de volgende speltak, de explorers, 
+            waarin ze zelf activiteiten gaan organiseren. 
+            Zo blijven scouts zich steeds verder ontwikkelen, dit heet bij Scouting de 'doorlopende leerlijn'. 
+            Lees meer over wat Scouting is.
         </p>
     </div>
 </section>
+
+<section class="section light">
+    <h3>Wanneer draaien de Scouts?</h3>
+
+    <div class="text-block">
+        <p>
+            Binnen onze vereniging hebben de Scouts elke week op zaterdag opkomst. 
+        </p>
+        <p>
+            Er zijn twee groepen; een jongens en een gemengde groep:
+            <ul>
+                <li>Scouts Roadrunners - jongens - 09.30 - 11.30</li>
+                <li>Scouts Thunderbirds - gemengd - 12.00 - 14.00</li>
+            </ul>
+        </p>
+    </div>
+</section>
+
 <section class="section light">
     <h2>Kom een keer kijken!</h2>
 
     <div class="text-block">
         <p>
-            Nieuwsgierig geworden? Kom gerust een paar keer gratis meedraaien
-            en ontdek of Scouting iets voor jou is!
+            Wil je een keer komen kijken? Neem contact op via het Scout worden formulier!
         </p>
 
         <a href="scout-worden.html" class="button btn-red">Neem contact op</a>
     </div>
 </section>
-
 
 
 
@@ -365,8 +154,10 @@ footer {
         </div>
 
         <div>
-            <p>📍 Hennepe, Tiel</p>
-            <p>📧 info@scoutingphoenix.nl</p>
+            <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=Hennepe+199+Tiel" target="_blank">Hennepe 199, Tiel</a></p>
+            
+
+            <p>📧 <a href="mailto:info@scoutingphoenix.nl">info@scoutingphoenix.nl</a></p>
         </div>
 
         <div>
@@ -376,3 +167,6 @@ footer {
 </footer>
 </body>
 </html>
+
+
+

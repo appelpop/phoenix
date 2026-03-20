@@ -5,249 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Scouting Phoenix</title>
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-/* NAVBAR */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #c81e2b;
-    padding: 0 40px;
-    height: 70px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    box-sizing: border-box;
-    z-index: 1000;
-}
-
-/* Zorg dat alles netjes in lijn staat */
-nav {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Logo/tekst links */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2;
-}
-
-.title {
-    font-weight: bold;
-    font-size: 18px;
-    color: white;
-}
-
-.tagline {
-    font-size: 12px;
-    color: #ffd1d1; /* licht rood/witachtig */
-}
-
-.logo img {
-    width: 40px;
-    height: 40px;
-    background: white;       /* kleur van de cirkel */
-    border-radius: 100%;      /* maakt het rond */
-    padding: 8px;            /* ruimte rondom logo */
-}
-
-.logo span {
-    font-weight: bold;
-    font-size: 18px;
-    color: white;
-}
-
-/* DROPDOWN */
-.dropdown {
-    position: relative;
-    padding-bottom: 0px; /* 👈 belangrijk! */
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background: #faf6f6;
-    color: black;
-    top: 100%; /* 👈 beter dan 30px */
-    left: 0;
-    min-width: 180px;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 10px;
-    color: black;
-}
-
-.dropdown-content a:hover {
-    background: #eee;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* HERO */
-.hero {
-    height: 40vh;
-    background: url("images/gebouw.heic") center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 50px;
-    color: #ec0505;
-}
-.hero {
-
-    background:
-        linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-        url("images/gebouw.heic") center/cover no-repeat;
-}
-.hero-text {
-    max-width: 1000px;
-    text-align: right;
-    margin-right: 50px;
-}
-
-.hero h1 {
-    font-size: 60px;
-}
-
-/* BUTTONS */
-.button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.btn-red {
-    background: #c81e2b;
-    color: white;
-}
-
-.btn-white {
-    background: white;
-    color: black;
-}
-
-/* CONTENT */
-.section {
-    padding: 60px;
-    background: #f5f5f5;
-}
-
-.section.light {
-    background: #f5f5f5;
-    color: #333;
-}
-
-.text-block {
-    max-width: 800px;
-    line-height: 1.6;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.card {
-    background: white;
-    color: #333;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
-.card {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-.card:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-.card-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.card-header img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-}
-footer {
-    background: #1a1a1a;
-    color: white;
-    padding: 40px;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-.table-container {
-    overflow-x: auto;
-    margin-top: 20px;
-}
-
-table {
-    width: 100%;
-    border-collapse: collapse;
-    background: white;
-    border-radius: 12px;
-    overflow: hidden;
-}
-
-th, td {
-    padding: 12px;
-    text-align: left;
-}
-
-th {
-    background: #c81e2b;
-    color: white;
-}
-
-tr:nth-child(even) {
-    background: #f2f2f2;
-}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -262,19 +20,20 @@ tr:nth-child(even) {
 
     </div>
 
-    <nav>
-        <a href="#">Home</a>
+        <nav>
+        <a href="index.html">Home</a>
 
         <div class="dropdown">
-            <a href="#">Wat is scouting? ▾</a>
+            <a href="wat-is-scouting.html">Wat is scouting? ▾</a>
             <div class="dropdown-content">
-                <a href="wat-is-scouting.html">Uitleg</a>
+                <a href="wat-is-scouting.html">Wat is scouting?</a>
                 <a href="geschiedenis.html">Geschiedenis</a>
             </div>
         </div>
         <div class="dropdown">
             <a href="speltakken.html">Speltakken ▾</a>
             <div class="dropdown-content">
+                <a href="speltakken.html">Speltakken</a>
                 <a href="bevers.html">Bevers</a>
                 <a href="welpen.html">Welpen</a>
                 <a href="scouts.html">Scouts</a>
@@ -283,20 +42,21 @@ tr:nth-child(even) {
             </div>
         </div>
         <div class="dropdown">
-            <a href="#">Scout worden ▾</a>
+            <a href="scout-worden.html">Scout worden ▾</a>
              <div class="dropdown-content">
                  <a href="scout-worden.html">Scout worden</a>
-                 <a href="vrijwilligers.html">Vrijwilligers gezocht</a>
+                 <a href="vrijwilligers.html">Vrijwilligers gezocht!</a>
              </div>
         </div>
-
+        
         <a href="contributie.html">Contributie</a>
         <a href="verhuur.html">Verhuur</a>
-        <a href="#">Contact</a>
+        <a href="contact.html">Contact</a>
 
         <div class="dropdown">
-            <a href="#">Disclaimer ▾</a>
+            <a href="disclaimer.html">Disclaimer ▾</a>
             <div class="dropdown-content">
+                <a href="disclaimer.html">Disclaimer</a>
                 <a href="cameraprotocol.html">Cameraprotocol</a>
                 <a href="gedragscode.html">gedragscode</a>
             </div>
@@ -306,7 +66,9 @@ tr:nth-child(even) {
 
 <section class="hero">
     <div class="hero-text">
+        <div class="hero-box">
         <h1>Speltakken</h1>
+            </div>
     </div>
 </section>
 
@@ -316,31 +78,35 @@ tr:nth-child(even) {
     <div class="text-block">
 
         <p>
-            Onze groep is er trots op om voor iedereen een leuke dagbesteding te kunnen aanbieden.
-            De speltakken beginnen voor kinderen vanaf 5 jaar en lopen door tot 21+.
+            Onze groep is er trots op om voor iedereen een leuke dagbesteding te kunnen aanbieden. 
+            Onze speltakken beginnen voor kinderen vanaf 4 jaar en lopen door tot groepen voor 
+            leden van 21 jaar en ouder. Door op de gewenste leeftijdscategorie te klikken 
+            vindt u meer informatie over deze specifieke groepen.
         </p>
 
+        <h4>Komen kijken</h4>
         <p>
-            Je kunt altijd vier keer gratis meekijken om te ontdekken of scouting iets voor je is.
+            Je kunt bij ons altijd vier keer gratis meekijken. 
+            Dus als je nog twijfelt of scouting wel iets voor je is of bij welke groep je het beste past 
+            kun je het beste gewoon een keer langskomen. 
+        </p>
+
+        <h4>Gemengd of ongemengd</h4>
+
+        <p>
+            In alle leeftijdscategorieën zijn gemengde speltakken beschikbaar, 
+            waarbij jongens en meisjes gezamenlijk het scoutingspel spelen. 
+            Bij de Welpen en Scouts bieden we daarnaast ook keuze uit ongemengde 
+            speltakken voor alleen meisjes of jongens. 
         </p>
 
     </div>
 </section>
 
-<section class="section light">
-    <h2>Gemengd of ongemengd</h2>
-
-    <div class="text-block">
-        <p>
-            In alle leeftijdscategorieën zijn gemengde speltakken beschikbaar.
-            Daarnaast bieden we bij Welpen en Scouts ook aparte groepen voor jongens en meisjes.
-        </p>
-    </div>
-</section>
-
-<section class="section light">
+<section class="section light spel">
     <h2>Opkomsttijden</h2>
 
+    <div class="text-block">
     <div class="table-container">
         <table>
             <tr>
@@ -405,8 +171,9 @@ tr:nth-child(even) {
 
         </table>
     </div>
+    </div>
 </section>
-<section class="section light">
+<section class="section light spel">
     <h2>De Speltakken</h2>
 
     <div class="cards">
@@ -431,7 +198,7 @@ tr:nth-child(even) {
 
         <a href="scouts.html" class="card">
             <div class="card-header">
-                <img src="images/Scouts.png" alt="Scouts">
+                <img src="images/scouts.png" alt="Scouts">
                 <h3>Scouts</h3>
             </div>
 
@@ -441,7 +208,7 @@ tr:nth-child(even) {
 
         <a href="Explorers.html" class="card">
             <div class="card-header">
-                <img src="images/Explorers.png" alt="Explorers">
+                <img src="images/explorers.png" alt="Explorers">
                 <h3>Explorers</h3>
             </div>
 
@@ -451,7 +218,7 @@ tr:nth-child(even) {
 
         <a href="Roverscouts.html" class="card">
             <div class="card-header">
-                <img src="images/Roverscouts.png" alt="Roverscouts">
+                <img src="images/roverscouts.png" alt="Roverscouts">
                 <h3>Roverscouts</h3>
             </div>
 
@@ -460,6 +227,8 @@ tr:nth-child(even) {
         </a>
     </div>
 </section>
+
+
 <footer>
     <div class="footer-content">
         <div>
@@ -468,8 +237,10 @@ tr:nth-child(even) {
         </div>
 
         <div>
-            <p>📍 Hennepe, Tiel</p>
-            <p>📧 info@scoutingphoenix.nl</p>
+            <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=Hennepe+199+Tiel" target="_blank">Hennepe 199, Tiel</a></p>
+            
+
+            <p>📧 <a href="mailto:info@scoutingphoenix.nl">info@scoutingphoenix.nl</a></p>
         </div>
 
         <div>
@@ -479,3 +250,6 @@ tr:nth-child(even) {
 </footer>
 </body>
 </html>
+
+
+

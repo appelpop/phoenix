@@ -5,218 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Scouting Phoenix</title>
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-/* NAVBAR */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #c81e2b;
-    padding: 0 40px;
-    height: 70px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    box-sizing: border-box;
-    z-index: 1000;
-}
-
-/* Zorg dat alles netjes in lijn staat */
-nav {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Logo/tekst links */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2;
-}
-
-.title {
-    font-weight: bold;
-    font-size: 18px;
-    color: white;
-}
-
-.tagline {
-    font-size: 12px;
-    color: #ffd1d1; /* licht rood/witachtig */
-}
-
-.logo img {
-    width: 40px;
-    height: 40px;
-    background: white;       /* kleur van de cirkel */
-    border-radius: 100%;      /* maakt het rond */
-    padding: 8px;            /* ruimte rondom logo */
-}
-
-.logo span {
-    font-weight: bold;
-    font-size: 18px;
-    color: white;
-}
-
-/* DROPDOWN */
-.dropdown {
-    position: relative;
-    padding-bottom: 0px; /* 👈 belangrijk! */
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background: white;
-    color: black;
-    top: 100%; /* 👈 beter dan 30px */
-    left: 0;
-    min-width: 130px;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 10px;
-    color: black;
-}
-
-.dropdown-content a:hover {
-    background: #eee;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* HERO */
-.hero {
-    height: 40vh;
-    background: url("images/gebouw.heic") center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 50px;
-    color: #ec0505;
-}
-.hero {
-
-    background:
-        linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-        url("images/gebouw.heic") center/cover no-repeat;
-}
-.hero-text {
-    max-width: 1000px;
-    text-align: right;
-    margin-right: 50px;
-}
-
-.hero h1 {
-    font-size: 60px;
-}
-
-/* BUTTONS */
-.button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.btn-red {
-    background: #c81e2b;
-    color: white;
-}
-
-.btn-white {
-    background: white;
-    color: black;
-}
-
-/* CONTENT */
-.section {
-    padding: 60px;
-    background: #f5f5f5;
-}
-
-.section.light {
-    background: #f5f5f5;
-    color: #333;
-}
-
-.text-block {
-    max-width: 800px;
-    line-height: 1.6;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.card {
-    background: white;
-    color: #333;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-5px);
-}
-.card-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.card-header img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-}
-footer {
-    background: #1a1a1a;
-    color: white;
-    padding: 40px;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -231,20 +20,20 @@ footer {
 
     </div>
 
-    <nav>
+        <nav>
         <a href="index.html">Home</a>
 
         <div class="dropdown">
-            <a href="#">Wat is scouting? ▾</a>
+            <a href="wat-is-scouting.html">Wat is scouting? ▾</a>
             <div class="dropdown-content">
-                <a href="wat-is-scouting.html">Uitleg</a>
+                <a href="wat-is-scouting.html">Wat is scouting?</a>
                 <a href="geschiedenis.html">Geschiedenis</a>
             </div>
         </div>
-
         <div class="dropdown">
             <a href="speltakken.html">Speltakken ▾</a>
             <div class="dropdown-content">
+                <a href="speltakken.html">Speltakken</a>
                 <a href="bevers.html">Bevers</a>
                 <a href="welpen.html">Welpen</a>
                 <a href="scouts.html">Scouts</a>
@@ -253,18 +42,21 @@ footer {
             </div>
         </div>
         <div class="dropdown">
-            <a href="#">Scout worden ▾</a>
-            <div class="dropdown-content">
-                <a href="scout-worden.html">Scout worden</a>
-                <a href="vrijwilligers.html">Vrijwilligers gezocht</a>
-            </div>
+            <a href="scout-worden.html">Scout worden ▾</a>
+             <div class="dropdown-content">
+                 <a href="scout-worden.html">Scout worden</a>
+                 <a href="vrijwilligers.html">Vrijwilligers gezocht!</a>
+             </div>
         </div>
+        
         <a href="contributie.html">Contributie</a>
         <a href="verhuur.html">Verhuur</a>
-        <a href="#">Contact</a>
+        <a href="contact.html">Contact</a>
+
         <div class="dropdown">
-            <a href="#">Disclaimer ▾</a>
+            <a href="disclaimer.html">Disclaimer ▾</a>
             <div class="dropdown-content">
+                <a href="disclaimer.html">Disclaimer</a>
                 <a href="cameraprotocol.html">Cameraprotocol</a>
                 <a href="gedragscode.html">gedragscode</a>
             </div>
@@ -274,91 +66,58 @@ footer {
 
 <section class="hero">
     <div class="hero-text">
+        <div class="hero-box">
         <h1>Roverscouts</h1>
-    </div>
-</section>
-
-<section class="section light">
-    <h2>Wat zijn Roverscouts?</h2>
-
-    <div class="text-block">
-        <p>
-            De Roverscouts zijn jongeren van 18 tot 21 jaar.
-        </p>
-
-        <p>
-            Dit is de oudste speltak binnen Scouting. Hier draait alles om vrijheid,
-            eigen initiatief en gezelligheid.
-        </p>
-
-        <p>
-            De groep organiseert zelf activiteiten en bepaalt samen wat ze willen doen.
-        </p>
-    </div>
-</section>
-
-<section class="section light">
-    <h2>Wat doen Roverscouts?</h2>
-
-    <div class="cards">
-        <div class="card">
-            <h3>🌍 Reizen</h3>
-            <p>Samen op reis, vaak ook naar het buitenland.</p>
-        </div>
-
-        <div class="card">
-            <h3>🏕️ Kampen</h3>
-            <p>Zelf georganiseerde kampen en weekenden.</p>
-        </div>
-
-        <div class="card">
-            <h3>🎉 Gezelligheid</h3>
-            <p>Een hechte groep waar plezier centraal staat.</p>
+            <img src="images/roverscouts.png" alt="roverscouts">
         </div>
     </div>
 </section>
 
 <section class="section light">
-    <h2>Wanneer draaien de Roverscouts?</h2>
+    <h2>Roverscouts (18 - 21 jaar)</h2>
 
     <div class="text-block">
         <p>
-            De Roverscouts draaien meestal op vrijdagavond of in overleg.
+            Ben jij tussen de 18 en 21 jaar, heb je een eigen mening en heb je wel zin in leuke buitenlandse uitstapjes? 
+            Word dan roverscout en organiseer samen met andere jongeren je eigen kampen en activiteiten. 
+            Je kiest drie toffe uitdagingen waarmee je tijdens je roverscoutsperiode aan de slag gaat. 
+            Daarna kun je, als je wilt, doorgroeien tot vrijwilliger waarbij je andere scouts begeleidt. 
         </p>
 
         <p>
-            Omdat ze alles zelf organiseren, verschilt het programma per week.
+            De roverscoutsperiode is de laatste periode die een scout als jeugdlid bij Scouting doorbrengt. 
+            Vanaf 21 jaar is een scout namelijk geen jeugdlid meer. In deze laatste speltak hebben roverscouts 
+            geen begeleiding meer en bedenken ze zelf wat ze bij Scouting willen doen. Als roverscouts ben je 
+            bezig met drie uitdagingen die je zelf kiest. Het gebruik van activiteitengebieden 
+            (verzamelingen van activiteiten die qua onderwerp bij elkaar horen) zorgt voor variatie in het programma. 
+            Je onderneemt enorm veel met je stam, in zowel binnen- als buitenland. 
+            De roverscoutsperiode wordt afgesloten met een eindceremonie waarmee je de keuze maakt om 
+            wel of niet bij Scouting betrokken te blijven.
         </p>
     </div>
 </section>
 
 <section class="section light">
-    <h2>Volwassen Scouting</h2>
+    <h3>Wanneer draaien de Explorers?</h3>
 
     <div class="text-block">
         <p>
-            Bij de Roverscouts ligt de focus op zelfstandigheid en eigen keuzes.
-            Het is de laatste stap binnen Scouting voordat je eventueel leiding wordt.
+            Binnen onze vereniging heeft de Roverscouts groep elke week op vrijdag avond opkomst van 19.30 uur tot 21.30 uur.
         </p>
     </div>
 </section>
 
-
-
-
 <section class="section light">
-    <h2>Meedoen?</h2>
+    <h2>Kom een keer kijken!</h2>
 
     <div class="text-block">
         <p>
-            Lijkt het je leuk om deel uit te maken van deze groep?
-            Neem contact met ons op!
+            Wil je een keer komen kijken? Neem contact op via het Scout worden formulier!
         </p>
 
         <a href="scout-worden.html" class="button btn-red">Neem contact op</a>
     </div>
 </section>
-
 
 
 
@@ -370,8 +129,10 @@ footer {
         </div>
 
         <div>
-            <p>📍 Hennepe, Tiel</p>
-            <p>📧 info@scoutingphoenix.nl</p>
+            <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=Hennepe+199+Tiel" target="_blank">Hennepe 199, Tiel</a></p>
+            
+
+            <p>📧 <a href="mailto:info@scoutingphoenix.nl">info@scoutingphoenix.nl</a></p>
         </div>
 
         <div>
@@ -381,3 +142,6 @@ footer {
 </footer>
 </body>
 </html>
+
+
+

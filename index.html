@@ -4,231 +4,16 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Scouting Phoenix</title>
+<link rel="icon" type="image/x-icon" href="images/vuurvogel.png">
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-}
-
-/* NAVBAR */
-header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    background: #c81e2b;
-    padding: 0 40px;
-    height: 70px;
-
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-
-    box-sizing: border-box;
-    z-index: 1000;
-}
-
-/* Zorg dat alles netjes in lijn staat */
-nav {
-    display: flex;
-    align-items: center;
-    gap: 20px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-/* Logo/tekst links */
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.logo-text {
-    display: flex;
-    flex-direction: column;
-    line-height: 1.2;
-}
-
-.title {
-    font-weight: bold;
-    font-size: 18px;
-    color: white;
-}
-
-.tagline {
-    font-size: 12px;
-    color: #ffd1d1; /* licht rood/witachtig */
-}
-
-.logo img {
-    width: 40px;
-    height: 40px;
-    background: white;       /* kleur van de cirkel */
-    border-radius: 100%;      /* maakt het rond */
-    padding: 8px;            /* ruimte rondom logo */
-}
-
-.logo span {
-    font-weight: bold;
-    font-size: 18px;
-    color: white;
-}
-
-/* DROPDOWN */
-.dropdown {
-    position: relative;
-    padding-bottom: 0px; /* 👈 belangrijk! */
-}
-
-.dropdown-content {
-    display: none;
-    position: absolute;
-    background: #faf6f6;
-    color: black;
-    top: 100%; /* 👈 beter dan 30px */
-    left: 0;
-    min-width: 180px;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.dropdown-content a {
-    display: block;
-    padding: 10px;
-    color: black;
-}
-
-.dropdown-content a:hover {
-    background: #eee;
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
-}
-
-/* HERO */
-.hero {
-    height: 40vh;
-    background: url("images/gebouw.heic") center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    padding: 50px;
-    color: #ec0505;
-}
-.hero {
-
-    background:
-        linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)),
-        url("images/gebouw.heic") center/cover no-repeat;
-}
-.hero-text {
-    max-width: 1000px;
-    text-align: right;
-    margin-right: 50px;
-}
-
-.hero h1 {
-    font-size: 60px;
-}
-
-/* BUTTONS */
-.button {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-}
-
-.btn-red {
-    background: #c81e2b;
-    color: white;
-}
-
-.btn-white {
-    background: white;
-    color: black;
-}
-
-/* CONTENT */
-.section {
-    padding: 60px;
-    background: #f5f5f5;
-}
-
-.section.light {
-    background: #f5f5f5;
-    color: #333;
-}
-
-.text-block {
-    max-width: 800px;
-    line-height: 1.6;
-}
-
-.cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 25px;
-    margin-top: 30px;
-}
-
-.card {
-    background: white;
-    color: #333;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: 0.3s;
-}
-.card {
-    text-decoration: none;
-    color: inherit;
-    display: block;
-}
-.card:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
-}
-.card-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.card-header img {
-    width: 40px;
-    height: 40px;
-    object-fit: contain;
-}
-footer {
-    background: #1a1a1a;
-    color: white;
-    padding: 40px;
-}
-
-.footer-content {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 20px;
-}
-</style>
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
 
 <header>
     <div class="logo">
-        <img src="images/Vuurvogel.png" alt="Scouting Phoenix logo">
+        <img src="images/vuurvogel.png" alt="Scouting Phoenix logo">
         <div class="logo-text">
             <span class="title">Scouting Phoenix Tiel</span>
             <span class="tagline">-  Vol Vuur Vooruit  -</span>
@@ -236,19 +21,20 @@ footer {
 
     </div>
 
-    <nav>
-        <a href="#">Home</a>
+        <nav>
+        <a href="index.html">Home</a>
 
         <div class="dropdown">
-            <a href="#">Wat is scouting? ▾</a>
+            <a href="wat-is-scouting.html">Wat is scouting? ▾</a>
             <div class="dropdown-content">
-                <a href="wat-is-scouting.html">Uitleg</a>
+                <a href="wat-is-scouting.html">Wat is scouting?</a>
                 <a href="geschiedenis.html">Geschiedenis</a>
             </div>
         </div>
         <div class="dropdown">
             <a href="speltakken.html">Speltakken ▾</a>
             <div class="dropdown-content">
+                <a href="speltakken.html">Speltakken</a>
                 <a href="bevers.html">Bevers</a>
                 <a href="welpen.html">Welpen</a>
                 <a href="scouts.html">Scouts</a>
@@ -257,20 +43,21 @@ footer {
             </div>
         </div>
         <div class="dropdown">
-            <a href="#">Scout worden ▾</a>
+            <a href="scout-worden.html">Scout worden ▾</a>
              <div class="dropdown-content">
                  <a href="scout-worden.html">Scout worden</a>
-                 <a href="vrijwilligers.html">Vrijwilligers gezocht</a>
+                 <a href="vrijwilligers.html">Vrijwilligers gezocht!</a>
              </div>
         </div>
         
         <a href="contributie.html">Contributie</a>
         <a href="verhuur.html">Verhuur</a>
-        <a href="#">Contact</a>
+        <a href="contact.html">Contact</a>
 
         <div class="dropdown">
-            <a href="#">Disclaimer ▾</a>
+            <a href="disclaimer.html">Disclaimer ▾</a>
             <div class="dropdown-content">
+                <a href="disclaimer.html">Disclaimer</a>
                 <a href="cameraprotocol.html">Cameraprotocol</a>
                 <a href="gedragscode.html">gedragscode</a>
             </div>
@@ -280,9 +67,11 @@ footer {
 
 <section class="hero">
     <div class="hero-text">
+        <div class="hero-box">
         <h1>Welkom bij<br>Scouting Phoenix Tiel!</h1>
-        <a href="#" class="button btn-red">Bekijk de groepen!</a>
-        <a href="#" class="button btn-white">Word scout!</a>
+        <a href="speltakken.html" class="button btn-red">Bekijk de groepen!</a>
+        <a href="scout-worden.html" class="button btn-white">Word scout!</a>
+            </div>
     </div>
 </section>
 
@@ -291,27 +80,46 @@ footer {
 
     <div class="text-block">
         <p>
-            Onze vereniging is dé scoutingvereniging van Tiel en omstreken.
-            Elke week beleven 150 leden en kaderleden een nieuw avontuur bij de diverse speltakken.
+            Onze vereniging is dè Scoutingvereniging van Tiel en omstreken. 
+            Elke week beleven 150 leden en kaderleden een nieuw avontuur bij 
+            de diverse speltakken/groepen die de vereniging rijk is.
         </p>
 
         <p>
-            Scouting is er voor iedere leeftijd en ook voor kinderen met een beperking.
-            Iedereen is welkom om mee te doen.
+            Scouting is er in Tiel voor elke leeftijd en ook voor kinderen met een beperking. 
+            Kortom, iedereen is welkom om te kijken en mee te doen met ons spel.
         </p>
 
         <p>
-            De opkomsten vinden plaats op het scoutingterrein aan de Hennepe in Tiel.
-            De jongere speltakken draaien op zaterdag, de oudere op vrijdagavond.
+            De opkomsten van de vereniging vinden plaats op scoutingterrein aan de Hennepe 199 in Tiel. 
+            Voor leden van 5 t/m 15 jaar wordt er gedraaid op de zaterdagochtend en middag.
+            De oudere speltakken draaien op vrijdagavond.
         </p>
 
         <p>
-            Kijken bij een speltak mag vier keer gratis.
-            Neem gerust contact met ons op!
+            Kijken bij de speltakken van Scouting Phoenix Tiel is vier keer gratis. 
+            Wil je meer weten over onze groepen? 
+            Klik dan in het menu op de leeftijdscategorie waar je meer over wil weten. 
+            Wil je een keertje komen kijken? 
+            Neem dan contact met ons op.
         </p>
+
+        <p>
+            Bij Scouting Phoenix Tiel kunnen we altijd nieuwe leiding en vrijwilligers gebruiken. 
+            Lees hoe je ons kunt helpen.
+        </p>
+
+        <p>
+            Volg ons op Facebook om te weten waar wij op dit moment mee bezig zijn!
+        </p>
+
+        <ul>
+            <li>Op ons terrein is er camerabewaking aanwezig, lees alles hierover in ons cameraprotocol.</li>
+            <li>Wij houden ons aan de Preventie en integriteitsbeleid gedragscode.</li>
+        </ul>
     </div>
 </section>
-<section class="section light">
+<section class="section light spel">
     <h2>De Speltakken</h2>
 
     <div class="cards">
@@ -365,6 +173,10 @@ footer {
         </a>
     </div>
 </section>
+
+
+
+
 <footer>
     <div class="footer-content">
         <div>
@@ -373,8 +185,10 @@ footer {
         </div>
 
         <div>
-            <p>📍 Hennepe, Tiel</p>
-            <p>📧 info@scoutingphoenix.nl</p>
+            <p>📍 <a href="https://www.google.com/maps/search/?api=1&query=Hennepe+199+Tiel" target="_blank">Hennepe 199, Tiel</a></p>
+            
+
+            <p>📧 <a href="mailto:info@scoutingphoenix.nl">info@scoutingphoenix.nl</a></p>
         </div>
 
         <div>
@@ -384,3 +198,6 @@ footer {
 </footer>
 </body>
 </html>
+
+
+
