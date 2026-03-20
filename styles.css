@@ -14,6 +14,16 @@ body {
     font-family: Arial, sans-serif;
     padding-top: 70px;
 }
+body {
+
+    min-height: 100vh;
+
+    background:
+            linear-gradient(rgba(255, 255, 255, 0.83), rgba(255, 255, 255, 0.83)),
+            url("images/blauw.svg") center/cover no-repeat;
+}
+
+
 /* NAVBAR */
 header {
     position: fixed;
@@ -408,6 +418,14 @@ button:hover {
 /* hamburger standaard verbergen (desktop) */
 .menu-toggle {
     display: none;
+}
+
+.section {
+    background: transparent;
+}
+
+.section.light {
+    background: transparent;
 }
 /* =========================
    MOBILE (tablet + phone)
