@@ -12,6 +12,7 @@
 
 <header>
     <div class="logo">
+        <div class="menu-toggle">☰</div>
         <img src="images/vuurvogel.png" alt="Scouting Phoenix logo">
         <div class="logo-text">
             <span class="title">Scouting Phoenix Tiel</span>
@@ -286,6 +287,24 @@
         </div>
     </div>
 </footer>
+<script>
+const toggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('nav');
+
+toggle.onclick = () => {
+    nav.classList.toggle('active');
+};
+
+/* dropdown klikbaar maken op mobiel */
+document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            this.parentElement.classList.toggle('active');
+        }
+    });
+});
+</script>
 </body>
 </html>
 

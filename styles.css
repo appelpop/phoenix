@@ -1,14 +1,19 @@
-@font-face {
+/*@font-face {
     font-family: 'League Spartan';
     src: url('fonts/LeagueSpartan.ttf') format('woff');
 }
 
 /* Global */
-body {
+/*body {
     margin: 0;
     font-family: 'League Spartan', sans-serif;
 }
-
+ */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    padding-top: 70px;
+}
 /* NAVBAR */
 header {
     position: fixed;
@@ -31,7 +36,11 @@ nav {
     align-items: center;
     gap: 20px;
 }
-
+/* Laatste dropdown naar rechts uitlijnen */
+nav .dropdown:last-child .dropdown-content {
+    left: auto;
+    right: 0px;
+}
 nav a {
     color: white;
     text-decoration: none;
@@ -87,7 +96,7 @@ nav a {
     position: absolute;
     top: 100%;
     left: 0;
-    min-width: 180px;
+    min-width: 100px;
     background: #E63A4A;
     color: white;
     border-radius: 8px;
@@ -124,7 +133,7 @@ nav a {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    padding: 50px;
+    padding: 10px;
     color: #C41E3A;
     background-size: cover;
 }
@@ -190,6 +199,7 @@ nav a {
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 25px;
     margin-top: 30px;
+
 }
 
 .card {
@@ -199,6 +209,7 @@ nav a {
     border-radius: 12px;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     transition: 0.3s;
+
 }
 
 .card:hover {
@@ -260,7 +271,7 @@ footer a:hover {
 }
 
 /* Links in navigation (wit) */
-nav a {
+/*nav a {
     color: white;
 }
 
@@ -270,7 +281,7 @@ a {
     text-decoration: none;
 }
 
-a:hover {
+/*a:hover {
     text-decoration: underline;
 }
 
@@ -393,4 +404,175 @@ button:hover {
 @keyframes fadeIn {
     from {opacity: 0;}
     to {opacity: 1;}
+}
+/* hamburger standaard verbergen (desktop) */
+.menu-toggle {
+    display: none;
+}
+/* =========================
+   MOBILE (tablet + phone)
+========================= */
+@media (max-width: 768px) {
+
+    /* HEADER */
+    header {
+        padding: 0 20px;
+    }
+
+    .logo-text .title {
+        font-size: 16px;
+    }
+
+    .logo-text .tagline {
+        font-size: 10px;
+    }
+
+    /* HAMBURGER BUTTON */
+    .menu-toggle {
+        display: block;
+        font-size: 26px;
+        color: white;
+        cursor: pointer;
+    }
+
+    /* NAV MENU */
+    nav {
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: #C41E3A;
+
+        flex-direction: column;
+        align-items: stretch;
+
+        display: none;
+
+        padding: 10px 0;
+    }
+
+    nav.active {
+        display: flex;
+    }
+
+    /* MENU ITEMS */
+    nav a {
+        width: 100%;
+        padding: 18px 20px;
+        font-size: 16px;
+        border-bottom: 1px solid rgba(255,255,255,0.15);
+    }
+
+    nav a:active {
+        background: rgba(255,255,255,0.1);
+    }
+
+    /* DROPDOWN */
+    .dropdown {
+        width: 100%;
+    }
+
+    /* dropdown knop */
+    .dropdown > a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* pijltje */
+    .dropdown > a::after {
+        content: "▾";
+        transition: transform 0.2s ease;
+    }
+
+    .dropdown.active > a::after {
+        transform: rotate(180deg);
+    }
+
+    /* dropdown content */
+    .dropdown-content {
+        position: static;
+        display: none;
+        width: 100%;
+        background: #E63A4A;
+        border-radius: 0;
+        box-shadow: none;
+    }
+
+    .dropdown.active .dropdown-content {
+        display: block;
+    }
+
+    /* dropdown items */
+    .dropdown-content a {
+        padding: 14px 30px;
+        font-size: 15px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* HERO */
+    .hero {
+        height: auto;
+        padding: 40px 20px;
+        justify-content: center;
+    }
+
+    .hero-text {
+        text-align: right;
+        margin: 0;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero-box {
+
+        padding: 10px;
+    }
+
+    /* SECTIONS */
+    .section {
+        padding: 30px 15px;
+    }
+
+    .section.light {
+        padding: 30px 15px;
+    }
+
+    /* CARDS */
+    .cards {
+        grid-template-columns: 1fr;
+    }
+
+    /* FOOTER */
+    .footer-content {
+        flex-direction: column;
+    }
+
+    /* FORM */
+    input, select, textarea {
+        font-size: 16px;
+    }
+}
+
+
+/* =========================
+   EXTRA SMALL (telefoon)
+========================= */
+@media (max-width: 480px) {
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .button {
+        display: block;
+        width: 55%;
+        text-align: center;
+    }
+
+    .hero-box img {
+        max-width: 150px;
+    }
 }

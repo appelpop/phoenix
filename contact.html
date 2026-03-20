@@ -12,6 +12,7 @@
 
 <header>
     <div class="logo">
+        <div class="menu-toggle">☰</div>
         <img src="images/vuurvogel.png" alt="Scouting Phoenix logo">
         <div class="logo-text">
             <span class="title">Scouting Phoenix Tiel</span>
@@ -92,37 +93,37 @@
                 <tr>
                     <td>0</td>
                     <td>Voorzitter - VACANT</td>
-                    <td><a href="mailto:voorzitter@scoutingphoenix.nl " class="button btn-red">voorzitter@scoutingphoenix.nl</a></td>
+                    <td><a href="mailto:voorzitter@scoutingphoenix.nl ">voorzitter@scoutingphoenix.nl</a></td>
                     <td>—</td>
                 </tr>
                 <tr>
                     <td>1</td>
                     <td>Secretaris - Jan Jaspar (vacant per maart)</td>
-                    <td><a href="mailto:secretaris@scoutingphoenix.nl" class="button btn-red">secretaris@scoutingphoenix.nl</a></td>
+                    <td><a href="mailto:secretaris@scoutingphoenix.nl">secretaris@scoutingphoenix.nl</a></td>
                     <td>—</td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td>Groepsbegeleider - Paulien van Gorkom</td>
-                    <td><a href="mailto:groepsbegeleider@scoutingphoenix.nl" class="button btn-red">groepsbegeleider@scoutingphoenix.nl</a></td>
+                    <td><a href="mailto:groepsbegeleider@scoutingphoenix.nl">groepsbegeleider@scoutingphoenix.nl</a></td>
                     <td>—</td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td>Praktijkbegeleider - Sebastiaan Overdijk</td>
-                    <td><a href="mailto:praktijkbegeleider@scoutingphoenix.nl" class="button btn-red">praktijkbegeleider@scoutingphoenix.nl</a></td>
+                    <td><a href="mailto:praktijkbegeleider@scoutingphoenix.nl">praktijkbegeleider@scoutingphoenix.nl</a></td>
                     <td>—</td>
                 </tr>
                 <tr>
                     <td>4</td>
                     <td>Penningmeester - Clemens de Bruin</td>
-                    <td><a href="mailto:penningmeester@scoutingphoenix.nl" class="button btn-red">penningmeester@scoutingphoenix.nl</a></td>
+                    <td><a href="mailto:penningmeester@scoutingphoenix.nl">penningmeester@scoutingphoenix.nl</a></td>
                     <td>—</td>
                 </tr>
                 <tr>
                     <td>5</td>
                     <td>Ledenadministratie - Carlo Tienkamp, Roland de Jong</td>
-                    <td><a href="mailto:ledenadministratie@scoutingphoenix.nl" class="button btn-red">ledenadministratie@scoutingphoenix.nl</a></td>
+                    <td><a href="mailto:ledenadministratie@scoutingphoenix.nl">ledenadministratie@scoutingphoenix.nl</a></td>
                     <td>—</td>
                 </tr>
             </tbody>
@@ -150,6 +151,24 @@
         </div>
     </div>
 </footer>
+<script>
+const toggle = document.querySelector('.menu-toggle');
+const nav = document.querySelector('nav');
+
+toggle.onclick = () => {
+    nav.classList.toggle('active');
+};
+
+/* dropdown klikbaar maken op mobiel */
+document.querySelectorAll('.dropdown > a').forEach(link => {
+    link.addEventListener('click', function(e) {
+        if (window.innerWidth <= 768) {
+            e.preventDefault();
+            this.parentElement.classList.toggle('active');
+        }
+    });
+});
+</script>
 </body>
 </html>
 
